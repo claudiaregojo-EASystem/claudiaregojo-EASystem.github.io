@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0067)file:///C:/Users/cvr19/Downloads/evolutionary-arc-system%20(1).html -->
+<!-- saved from url=(0067)file:///C:/Users/cvr19/Downloads/evolutionary-arc-system%20(2).html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,21 +7,21 @@
 <link href="./index_files/css2" rel="stylesheet">
 <style>
 :root {
-  --ink: #2A2D3E;
-  --parchment: #EDE8DC;
-  --warm-white: #F5F0E8;
-  --gold: #D4605A;
-  --gold-light: #E88888;
-  --sage: #5E7A58;
-  --rust: #D4605A;
-  --mid: #6A6478;
-  --dark-section: #1E2232;
-  --card: #FDFAF5;
-  --line: rgba(212,96,90,0.22);
-  --sage-line: rgba(94,122,88,0.25);
+  --ink: #525252;
+  --parchment: #f0efec;
+  --warm-white: #faf9f6;
+  --prussian: #2B4A7C;
+  --prussian-light: #4A6A9C;
+  --yellow: #fff44f;
+  --mid: #7A7A7A;
+  --dark-section: #2B4A7C;
+  --card: #faf9f6;
+  --line: rgba(43,74,124,0.25);
+  --gold: #2B4A7C;
+  --gold-light: #4A6A9C;
 }
 * { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior:smooth; }
+html { scroll-behavior:smooth; scroll-padding-top:72px; }
 body {
   background:var(--warm-white);
   color:var(--ink);
@@ -36,9 +36,9 @@ nav {
   position:fixed; top:0; left:0; right:0; z-index:200;
   display:flex; align-items:center; justify-content:space-between;
   padding:1.1rem 4rem;
-  background:rgba(245,240,232,0.97);
+  background:rgba(250,249,246,0.97);
   backdrop-filter:blur(8px);
-  border-bottom:1px solid rgba(212,96,90,0.2);
+  border-bottom:1px solid rgba(43,74,124,0.2);
 }
 .nav-logo {
   font-family:'Lora',serif; font-weight:500; font-size:0.82rem;
@@ -50,7 +50,7 @@ nav {
   letter-spacing:0.1em; text-transform:uppercase; color:var(--mid);
   text-decoration:none; transition:color 0.3s;
 }
-.nav-links a:hover { color:var(--gold); }
+.nav-links a:hover { color:var(--prussian); }
 
 /* HERO */
 .hero {
@@ -62,7 +62,7 @@ nav {
 }
 .hero-left::after {
   content:''; position:absolute; right:0; top:15%; bottom:15%;
-  width:1px; background:var(--gold); opacity:0.3;
+  width:1px; background:#2B4A7C; opacity:0.5;
 }
 .hero-right {
   background:var(--warm-white); display:flex; flex-direction:column;
@@ -70,22 +70,22 @@ nav {
 }
 .hero-eyebrow {
   font-family:'Lora',serif; font-weight:300; font-size:0.72rem;
-  letter-spacing:0.28em; text-transform:uppercase; color:var(--gold-light);
+  letter-spacing:0.28em; text-transform:uppercase; color:var(--yellow);
   margin-bottom:1.6rem; opacity:0; animation:fadeUp 0.8s 0.2s forwards; font-family:'Lora',serif; font-style:italic; letter-spacing:0.15em; font-size:0.8rem;
 }
 .hero-title {
   font-family:'Playfair Display',serif; font-size:clamp(2.6rem,4vw,4.2rem);
-  font-weight:400; line-height:1.12; color:#faf6ee;
+  font-weight:400; line-height:1.12; color:#faf9f6;
   margin-bottom:1.4rem; opacity:0; animation:fadeUp 0.8s 0.4s forwards;
 }
-.hero-title em { font-style:italic; color:#E88888; }
+.hero-title em { font-style:italic; color:var(--yellow); }
 .hero-subtitle {
   font-size:1rem; color:var(--mid); font-style:italic;
   max-width:340px; opacity:0; animation:fadeUp 0.8s 0.6s forwards; font-family:'Lora',serif; font-style:italic;
 }
 .hero-author {
   margin-top:3rem; font-size:0.72rem; font-weight:300; letter-spacing:0.18em;
-  text-transform:uppercase; color:rgba(212,96,90,0.65);
+  text-transform:uppercase; color:rgba(255,244,79,0.8);
   opacity:0; animation:fadeUp 0.8s 0.8s forwards;
 }
 .hero-description {
@@ -97,23 +97,23 @@ nav {
   opacity:0; animation:fadeUp 0.8s 0.7s forwards;
 }
 .code-digit {
-  width:40px; height:40px; border:1px solid var(--gold);
+  width:40px; height:40px; border:2px solid var(--yellow);
   display:flex; align-items:center; justify-content:center;
-  font-family:'Lora',serif; font-size:0.75rem; font-weight:500;
-  letter-spacing:0.05em; color:var(--gold);
+  font-family:'Playfair Display',serif; font-size:0.85rem; font-weight:700;
+  letter-spacing:0.05em; color:var(--yellow);
   transition:background 0.25s,color 0.25s,transform 0.2s;
   cursor:pointer; position:relative;
 }
-.code-digit:hover { background:var(--gold); color:var(--ink); transform:translateY(-3px); }
-.code-separator { color:var(--gold); opacity:0.5; font-size:0.9rem; }
+.code-digit:hover { background:var(--yellow); color:#1E1E1E; transform:translateY(-3px); }
+.code-separator { color:var(--yellow); opacity:0.7; font-size:0.9rem; }
 .hero-cta {
   margin-top:2.5rem; display:inline-block; font-size:0.75rem; font-weight:500;
   letter-spacing:0.18em; text-transform:uppercase; color:var(--ink);
   text-decoration:none; border-bottom:2px solid var(--gold); padding-bottom:4px;
   transition:color 0.3s,border-color 0.3s; opacity:0; animation:fadeUp 0.8s 0.9s forwards;
-  font-family:'Lora',serif;
+  font-family:'Lora',serif; color:var(--ink);
 }
-.hero-cta:hover { color:var(--gold); border-bottom-color:var(--gold-light); }
+.hero-cta:hover { color:var(--gold); border-bottom-color:var(--gold); }
 
 /* SHARED */
 section { padding:7rem 0; }
@@ -121,25 +121,25 @@ section { padding:7rem 0; }
 .section-label {
   font-family:'Lora',serif; font-size:0.7rem; font-weight:500;
   letter-spacing:0.28em; text-transform:uppercase; color:var(--gold);
-  margin-bottom:0.8rem; display:block; opacity:0.9;
+  margin-bottom:0.8rem; display:block;
 }
 .section-title {
   font-family:'Playfair Display',serif; font-size:clamp(1.9rem,2.5vw,2.8rem);
-  font-weight:400; line-height:1.2; margin-bottom:1.5rem; color:var(--ink);
+  font-weight:400; line-height:1.2; margin-bottom:1.5rem; color:#faf9f6;
 }
 .section-body { font-size:1rem; color:var(--mid); max-width:640px; line-height:1.9; font-family:'Lora',serif; }
-.gold-divider { width:56px; height:2px; background:var(--gold); margin:2rem 0; opacity:0.8; }
+.gold-divider { width:56px; height:2px; background:#2B4A7C; margin:2rem 0; }
 
 /* ABOUT */
 .about { background:var(--warm-white); }
 .about-grid { display:grid; grid-template-columns:1fr 1.1fr; gap:6rem; align-items:start; }
 .about-quote {
-  border-left:3px solid var(--sage); color:var(--ink); font-family:'Playfair Display',serif; padding-left:1.5rem; margin-top:2.5rem;
+  border-left:3px solid #2B4A7C; color:var(--dark-section); font-family:'Playfair Display',serif; font-style:italic; padding-left:1.5rem; margin-top:2.5rem;
   font-family:'Playfair Display',serif; font-style:italic; font-size:1.1rem;
   color:var(--ink); line-height:1.7;
 }
 .about-stats { display:grid; grid-template-columns:1fr 1fr; gap:2rem; margin-top:2rem; }
-.stat { border-top:1px solid rgba(212,96,90,0.2); padding-top:1rem; }
+.stat { border-top:1px solid rgba(43,74,124,0.2); padding-top:1rem; }
 .stat-number {
   font-family:'Playfair Display',serif; font-size:2.4rem; font-weight:400;
   color:var(--gold); line-height:1;
@@ -151,33 +151,34 @@ section { padding:7rem 0; }
 
 /* CODE SECTION */
 .code-section { background:var(--dark-section); color:var(--warm-white); }
-.code-section .section-title { color:#EDE8DC; }
-.code-section .section-body { color:rgba(237,232,220,0.65); }
+.code-section .section-title { color:#faf9f6; }
+.code-section .section-label { color:rgba(249,246,240,0.8); }
+.code-section .section-body { color:rgba(249,246,240,0.65); }
 .code-levels {
   margin-top:3.5rem; display:grid; grid-template-columns:repeat(7,1fr);
-  gap:1px; background:rgba(212,96,90,0.15); border:1px solid rgba(212,96,90,0.2);
+  gap:1px; background:rgba(43,74,124,0.15); border:1px solid rgba(43,74,124,0.2);
 }
 .code-level {
   background:var(--ink); padding:1.8rem 1.2rem;
   transition:background 0.25s,transform 0.2s; cursor:pointer; position:relative;
 }
-.code-level:hover { background:rgba(184,175,175,0.14); transform:translateY(-2px); }
+.code-level:hover { background:rgba(43,74,124,0.07); transform:translateY(-2px); }
 .code-level-num {
   font-size:0.62rem; font-weight:300; letter-spacing:0.2em;
-  color:var(--gold); opacity:1; margin-bottom:0.6rem;
+  color:var(--yellow); opacity:0.8; margin-bottom:0.6rem;
 }
 .code-level-name {
   font-family:'Playfair Display',serif; font-size:1.1rem;
-  color:#EDE8DC; margin-bottom:0.4rem;
+  color:#faf9f6; margin-bottom:0.4rem;
 }
 .code-level-dim {
   font-size:0.65rem; font-weight:500; letter-spacing:0.12em;
-  text-transform:uppercase; color:var(--gold); margin-bottom:0.8rem;
+  text-transform:uppercase; color:var(--yellow); margin-bottom:0.8rem;
 }
 .code-level-desc { font-size:0.8rem; color:rgba(237,232,220,0.82); line-height:1.6; }
 .click-hint {
   font-size:0.6rem; font-weight:300; letter-spacing:0.1em; text-transform:uppercase;
-  color:rgba(212,96,90,0.5); margin-top:0.8rem;
+  color:rgba(43,74,124,0.5); margin-top:0.8rem;
 }
 
 /* KINGDOMS */
@@ -186,27 +187,27 @@ section { padding:7rem 0; }
   display:grid; grid-template-columns:repeat(7,1fr); gap:1.5rem; margin-top:3.5rem;
 }
 .kingdom-card {
-  border-top:3px solid transparent; padding:1.6rem 1rem;
-  background:var(--card); transition:border-color 0.3s,transform 0.25s,box-shadow 0.3s; color:var(--ink);
-  cursor:pointer;
+  border-top:3px solid transparent; border:1px solid rgba(43,74,124,0.18); padding:1.6rem 1rem;
+  background:var(--card); transition:border-color 0.3s,transform 0.25s,box-shadow 0.3s; color:var(--dark-section);
+  cursor:pointer; box-shadow:0 2px 12px rgba(43,74,124,0.08);
 }
-.kingdom-card:hover { border-top-color:var(--gold); background:rgba(212,96,90,0.1); transform:translateY(-5px); box-shadow:0 14px 36px rgba(26,22,16,0.09); }
-.kingdom-num { font-size:0.62rem; font-weight:300; letter-spacing:0.18em; color:var(--gold); margin-bottom:0.4rem; }
-.kingdom-name { font-family:'Playfair Display',serif; font-size:1.05rem; margin-bottom:0.3rem; color:var(--ink); }
-.kingdom-question { font-style:italic; font-size:0.85rem; color:var(--sage); opacity:0.9; margin-bottom:0.8rem; line-height:1.5; }
-.kingdom-stage { font-size:0.62rem; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); opacity:0.7; }
+.kingdom-card:hover { border-top-color:#2B4A7C; background:rgba(43,74,124,0.07); transform:translateY(-5px); box-shadow:0 14px 36px rgba(26,22,16,0.09); }
+.kingdom-num { font-size:0.62rem; font-weight:600; letter-spacing:0.18em; color:var(--prussian); margin-bottom:0.4rem; }
+.kingdom-name { font-family:'Playfair Display',serif; font-size:1.05rem; margin-bottom:0.3rem; color:#3A3A3A; font-weight:700; }
+.kingdom-question { font-style:italic; font-size:0.85rem; color:var(--sage); margin-bottom:0.8rem; line-height:1.5; }
+.kingdom-stage { font-size:0.62rem; font-weight:300; letter-spacing:0.12em; text-transform:uppercase; color:var(--mid); }
 
 /* HOW */
 .how { background:var(--warm-white); }
 .steps { display:grid; grid-template-columns:repeat(5,1fr); gap:0; margin-top:4rem; position:relative; }
-.steps::before { content:''; position:absolute; top:1.1rem; left:5%; right:5%; height:1px; background:rgba(212,96,90,0.2); }
+.steps::before { content:''; position:absolute; top:1.1rem; left:5%; right:5%; height:1px; background:rgba(43,74,124,0.2); }
 .step { padding:0 1.5rem; position:relative; z-index:1; text-align:center; }
 .step-dot {
-  width:2.2rem; height:2.2rem; border:1px solid var(--gold); border-radius:50%;
+  width:2.2rem; height:2.2rem; border:1px solid #2B4A7C; border-radius:50%;
   background:var(--card); display:flex; align-items:center; justify-content:center;
   margin:0 auto 1.5rem; font-size:0.65rem; font-weight:500; color:var(--gold); letter-spacing:0.05em;
 }
-.step-title { font-family:'Playfair Display',serif; font-size:0.95rem; margin-bottom:0.5rem; }
+.step-title { font-family:'Playfair Display',serif; font-size:0.95rem; margin-bottom:0.5rem; color:#faf9f6; }
 .step-desc { font-size:0.82rem; color:var(--mid); line-height:1.6; }
 
 /* CASES */
@@ -220,12 +221,12 @@ section { padding:7rem 0; }
   .case-cards .case-card:last-child:nth-child(3n+2) { grid-column: 2; }
 }
 .case-card {
-  background:var(--card); padding:2rem; color:var(--ink);
+  background:var(--card); padding:2rem; color:var(--dark-section);
   border-bottom:2px solid transparent; transition:border-color 0.3s,transform 0.25s;
   cursor:pointer;
 }
-.case-card:hover { border-bottom-color:var(--gold); transform:translateY(-3px); background:rgba(212,96,90,0.06); }
-.case-code { font-size:0.68rem; font-weight:500; letter-spacing:0.1em; color:var(--gold); margin-bottom:0.8rem; opacity:0.9; }
+.case-card:hover { border-bottom-color:#2B4A7C; transform:translateY(-3px); background:rgba(43,74,124,0.04); }
+.case-code { font-size:0.68rem; font-weight:500; letter-spacing:0.1em; color:var(--prussian); margin-bottom:0.8rem; font-family:'Playfair Display',serif; font-style:italic; }
 .case-title { font-family:'Playfair Display',serif; font-size:1.1rem; margin-bottom:0.5rem; line-height:1.3; }
 .case-remedy { font-size:0.65rem; font-weight:500; letter-spacing:0.13em; text-transform:uppercase; color:var(--rust); margin-bottom:1rem; }
 .case-desc { font-size:0.88rem; color:var(--mid); line-height:1.7; }
@@ -234,22 +235,22 @@ section { padding:7rem 0; }
 .founders { background:var(--dark-section); color:var(--warm-white); }
 .founders-inner { display:grid; grid-template-columns:0.7fr 1.3fr; gap:6rem; align-items:center; }
 .founders-name-block { border-left:2px solid var(--gold); padding-left:2rem; }
-.founders-name { font-family:'Playfair Display',serif; font-size:2rem; color:var(--warm-white); line-height:1.2; margin-bottom:0.5rem; }
-.founders-title { font-size:0.68rem; font-weight:300; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); }
+.founders-name { font-family:'Playfair Display',serif; font-size:2rem; color:var(--yellow); line-height:1.2; margin-bottom:0.5rem; }
+.founders-title { font-size:0.68rem; font-weight:300; letter-spacing:0.2em; text-transform:uppercase; color:var(--yellow); }
 .founders-quote { font-family:'Playfair Display',serif; font-size:1.2rem; font-style:italic; line-height:1.75; color:rgba(237,232,220,0.88); }
 .founders-quote::before { content:'\201C'; font-size:3.5rem; color:var(--gold); opacity:0.5; display:block; line-height:0.8; margin-bottom:0.8rem; }
 
 /* FOOTER */
 footer {
-  background:var(--dark-section); border-top:1px solid rgba(212,96,90,0.15);
+  background:var(--dark-section); border-top:1px solid rgba(43,74,124,0.15);
   padding:2.5rem 4rem; display:flex; align-items:center; justify-content:space-between;
 }
-footer p { font-size:0.68rem; font-weight:300; letter-spacing:0.15em; text-transform:uppercase; color:rgba(237,232,220,0.35); }
+footer p { font-size:0.68rem; font-weight:300; letter-spacing:0.15em; text-transform:uppercase; color:rgba(249,246,240,0.35); }
 
 /* ── MODAL / PANEL ── */
 .overlay {
   display:none; position:fixed; inset:0; z-index:500;
-  background:rgba(42,45,62,0.7); backdrop-filter:blur(6px);
+  background:rgba(20,30,60,0.82); backdrop-filter:blur(6px);
   opacity:0; transition:opacity 0.3s;
 }
 .overlay.open { display:flex; align-items:flex-start; justify-content:flex-end; }
@@ -270,26 +271,26 @@ footer p { font-size:0.68rem; font-weight:300; letter-spacing:0.15em; text-trans
 .panel-close { color:var(--mid); }
 .panel-eyebrow {
   font-size:0.68rem; font-weight:500; letter-spacing:0.25em;
-  text-transform:uppercase; color:var(--gold); margin-bottom:0.8rem; opacity:0.9;
+  text-transform:uppercase; color:var(--prussian); margin-bottom:0.8rem;
 }
 .panel-title {
   font-family:'Playfair Display',serif; font-size:2.4rem; line-height:1.15;
-  margin-bottom:0.5rem; color:var(--ink);
+  margin-bottom:0.5rem; color:var(--dark-section);
 }
 .panel-subtitle { font-style:italic; color:var(--mid); font-size:1.05rem; margin-bottom:2rem; }
-.panel-divider { width:48px; height:2px; background:var(--gold); margin:1.5rem 0; opacity:0.8; }
+.panel-divider { width:48px; height:2px; background:var(--prussian); margin:1.5rem 0; }
 .panel-body { font-size:0.96rem; line-height:1.85; color:var(--ink); }
 .panel-body p { margin-bottom:1.1rem; color:var(--mid); }
 .panel-body h4 {
   font-family:'Playfair Display',serif; font-size:1.1rem;
-  margin:1.8rem 0 0.6rem; color:var(--ink);
+  margin:1.8rem 0 0.6rem; color:var(--prussian);
 }
 .panel-body ul { padding-left:1.2rem; margin-bottom:1.1rem; }
 .panel-body li { margin-bottom:0.4rem; font-size:0.93rem; color:var(--mid); line-height:1.6; }
 .panel-body strong { color:var(--ink); font-weight:600; }
 .panel-tag {
-  display:inline-block; background:rgba(212,96,90,0.08);
-  border:1px solid rgba(212,96,90,0.25); padding:0.3rem 0.9rem;
+  display:inline-block; background:rgba(43,74,124,0.08);
+  border:1px solid rgba(43,74,124,0.25); padding:0.3rem 0.9rem;
   font-size:0.72rem; font-weight:500; letter-spacing:0.1em;
   font-style:italic; font-family:'Lora',serif;
   color:var(--ink); margin:0.3rem 0.2rem 0.3rem 0;
@@ -299,22 +300,22 @@ footer p { font-size:0.68rem; font-weight:300; letter-spacing:0.15em; text-trans
   width:100%; border-collapse:collapse; margin-top:1.5rem; font-size:0.85rem;
 }
 .map-table th {
-  background:#141820; color:var(--gold-light);
+  background:var(--dark-section); color:var(--yellow);
   font-size:0.65rem; font-weight:500; letter-spacing:0.15em; text-transform:uppercase;
   padding:0.7rem 0.8rem; text-align:left; border:none;
 }
 .map-table td {
-  padding:0.65rem 0.8rem; border-bottom:1px solid rgba(212,96,90,0.2);
+  padding:0.65rem 0.8rem; border-bottom:1px solid rgba(43,74,124,0.2);
   vertical-align:top; line-height:1.5;
 }
 .map-table tr:last-child td { border-bottom:none; }
-.map-table tr:hover td { background:rgba(212,96,90,0.08); }
+.map-table tr:hover td { background:rgba(43,74,124,0.08); }
 
 /* ANIMATIONS */
 /* SCROLLBAR */
 ::-webkit-scrollbar { width:6px; }
 ::-webkit-scrollbar-track { background:var(--parchment); }
-::-webkit-scrollbar-thumb { background:rgba(212,96,90,0.35); border-radius:3px; }
+::-webkit-scrollbar-thumb { background:rgba(43,74,124,0.35); border-radius:3px; }
 
 @keyframes fadeUp {
   from { opacity:0; transform:translateY(18px); }
@@ -325,8 +326,8 @@ footer p { font-size:0.68rem; font-weight:300; letter-spacing:0.15em; text-trans
 
 /* MOBILE */
 @media(max-width:900px){
-  nav { padding:1rem 1.5rem; }
-  .nav-links { display:none; }
+  nav { padding:1rem 1.5rem; flex-wrap:wrap; }
+  .nav-links { display:flex; flex-wrap:wrap; gap:1rem; width:100%; padding:0.5rem 0; }
   .hero { grid-template-columns:1fr; min-height:auto; }
   .hero-left { padding:7rem 2rem 3rem; }
   .hero-right { padding:3rem 2rem 5rem; }
@@ -348,13 +349,13 @@ footer p { font-size:0.68rem; font-weight:300; letter-spacing:0.15em; text-trans
 <body>
 
 <nav>
-  <a class="nav-logo" href="file:///C:/Users/cvr19/Downloads/evolutionary-arc-system%20(1).html#">The Evolutionary Arc System</a>
+  <a class="nav-logo" href="file:///C:/Users/cvr19/Downloads/evolutionary-arc-system%20(2).html#">The Evolutionary Arc System</a>
   <ul class="nav-links">
-    <li><a href="file:///C:/Users/cvr19/Downloads/evolutionary-arc-system%20(1).html#about">The System</a></li>
-    <li><a href="file:///C:/Users/cvr19/Downloads/evolutionary-arc-system%20(1).html#code">The Code</a></li>
-    <li><a href="file:///C:/Users/cvr19/Downloads/evolutionary-arc-system%20(1).html#kingdoms">Kingdoms</a></li>
-    <li><a href="file:///C:/Users/cvr19/Downloads/evolutionary-arc-system%20(1).html#cases">Cases</a></li>
-    <li><a href="file:///C:/Users/cvr19/Downloads/evolutionary-arc-system%20(1).html#founder">About</a></li>
+    <li><a href="file:///C:/Users/cvr19/Downloads/evolutionary-arc-system%20(2).html#about">The System</a></li>
+    <li><a href="file:///C:/Users/cvr19/Downloads/evolutionary-arc-system%20(2).html#code">The Code</a></li>
+    <li><a href="file:///C:/Users/cvr19/Downloads/evolutionary-arc-system%20(2).html#kingdoms">Kingdoms</a></li>
+    <li><a href="file:///C:/Users/cvr19/Downloads/evolutionary-arc-system%20(2).html#cases">Cases</a></li>
+    <li><a href="file:///C:/Users/cvr19/Downloads/evolutionary-arc-system%20(2).html#founder">About</a></li>
 
   </ul>
 </nav>
@@ -376,22 +377,136 @@ footer p { font-size:0.68rem; font-weight:300; letter-spacing:0.15em; text-trans
       <span class="code-separator">·</span>
       <div class="code-digit" onclick="openCodePanel(&#39;species&#39;)" title="Species — click to learn more">S</div>
     </div>
+
+
+    <!-- Darwin evolutionary tree - "I think" sketch style -->
+    <div style="position:absolute;bottom:3rem;right:3rem;opacity:0.35;pointer-events:none;">
+      <svg width="260" height="280" viewBox="0 0 260 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- "I think" text at top - handwritten feel -->
+        <text x="10" y="22" font-family="Georgia,serif" font-style="italic" font-size="14" fill="#faf9f6" opacity="0.9">I think</text>
+        <!-- Main trunk -->
+        <path d="M130 270 C128 240 125 210 122 180 C119 150 118 125 120 100 C122 75 128 55 130 40" stroke="#faf9f6" stroke-width="1.2" stroke-linecap="round"></path>
+        <!-- Primary branches -->
+        <path d="M122 180 C110 165 95 150 78 140 C65 132 50 128 38 124" stroke="#faf9f6" stroke-width="0.9" stroke-linecap="round"></path>
+        <path d="M120 155 C132 140 148 130 162 120 C172 112 180 106 188 100" stroke="#faf9f6" stroke-width="0.9" stroke-linecap="round"></path>
+        <path d="M121 130 C112 115 100 102 88 92 C78 84 68 78 58 74" stroke="#faf9f6" stroke-width="0.8" stroke-linecap="round"></path>
+        <path d="M121 110 C130 96 142 84 155 74 C164 66 173 61 182 57" stroke="#faf9f6" stroke-width="0.8" stroke-linecap="round"></path>
+        <!-- Secondary branches from left primary -->
+        <path d="M78 140 C68 132 58 122 48 118 C40 115 34 113 28 112" stroke="#faf9f6" stroke-width="0.6" stroke-linecap="round"></path>
+        <path d="M78 140 C74 128 70 116 68 104 C66 94 65 86 64 78" stroke="#faf9f6" stroke-width="0.6" stroke-linecap="round"></path>
+        <!-- Secondary from right primary -->
+        <path d="M162 120 C168 108 172 96 174 84 C176 74 176 65 175 58" stroke="#faf9f6" stroke-width="0.6" stroke-linecap="round"></path>
+        <path d="M162 120 C170 115 178 110 185 106 C190 102 194 99 198 96" stroke="#faf9f6" stroke-width="0.6" stroke-linecap="round"></path>
+        <!-- Tertiary branchlets -->
+        <path d="M58 74 C52 66 46 59 40 54" stroke="#faf9f6" stroke-width="0.45" stroke-linecap="round"></path>
+        <path d="M58 74 C60 64 62 54 62 46" stroke="#faf9f6" stroke-width="0.45" stroke-linecap="round"></path>
+        <path d="M28 112 C20 108 14 104 8 100" stroke="#faf9f6" stroke-width="0.45" stroke-linecap="round"></path>
+        <path d="M64 78 C60 68 56 58 54 48" stroke="#faf9f6" stroke-width="0.45" stroke-linecap="round"></path>
+        <path d="M175 58 C172 48 170 40 168 32" stroke="#faf9f6" stroke-width="0.45" stroke-linecap="round"></path>
+        <path d="M182 57 C186 48 190 40 192 32" stroke="#faf9f6" stroke-width="0.45" stroke-linecap="round"></path>
+        <path d="M198 96 C204 88 210 80 214 72" stroke="#faf9f6" stroke-width="0.45" stroke-linecap="round"></path>
+        <!-- Terminal buds — small circles -->
+        <circle cx="8" cy="99" r="2" fill="#2B4A7C" opacity="0.8"></circle>
+        <circle cx="40" cy="53" r="2" fill="#2B4A7C" opacity="0.8"></circle>
+        <circle cx="54" cy="47" r="2" fill="#2B4A7C" opacity="0.8"></circle>
+        <circle cx="168" cy="31" r="2" fill="#2B4A7C" opacity="0.8"></circle>
+        <circle cx="192" cy="31" r="2" fill="#2B4A7C" opacity="0.8"></circle>
+        <circle cx="214" cy="71" r="2" fill="#2B4A7C" opacity="0.8"></circle>
+        <circle cx="130" cy="39" r="2" fill="#2B4A7C" opacity="0.9"></circle>
+        <!-- Numbered nodes — like Darwin's original -->
+        <text x="73" y="137" font-family="Georgia,serif" font-style="italic" font-size="9" fill="#faf9f6" opacity="0.7">A</text>
+        <text x="158" y="117" font-family="Georgia,serif" font-style="italic" font-size="9" fill="#faf9f6" opacity="0.7">B</text>
+        <text x="54" y="70" font-family="Georgia,serif" font-style="italic" font-size="9" fill="#faf9f6" opacity="0.7">C</text>
+        <text x="170" y="54" font-family="Georgia,serif" font-style="italic" font-size="9" fill="#faf9f6" opacity="0.7">D</text>
+        <!-- Sketch-style hatching marks at base -->
+        <path d="M118 268 L120 258 M122 265 L124 255 M126 267 L128 257 M132 268 L134 258 M136 265 L138 255" stroke="#faf9f6" stroke-width="0.4" opacity="0.4"></path>
+      </svg>
+    </div>
     <span class="hero-author">Claudia Regojo · 7 Years in Development</span>
   </div>
   <div class="hero-right" style="border-left:none; position:relative;">
     <p class="hero-description">Homeopathy has long needed a single grammar through which Scholten, Sankaran, Yakir, and Joshi could speak together. The Evolutionary Arc System is that grammar — a unified map of remedies across all kingdoms, grounded in evolutionary biology and the unfolding of human consciousness.</p>
     <div class="gold-divider"></div>
     <p class="hero-description" style="font-style:italic;color:var(--mid);font-size:0.97rem;">Designed for practicing homeopaths who want to move from intuition to precision — without losing depth.</p>
-    <a class="hero-cta" href="file:///C:/Users/cvr19/Downloads/evolutionary-arc-system%20(1).html#about">Explore the System →</a>
+    <a class="hero-cta" href="file:///C:/Users/cvr19/Downloads/evolutionary-arc-system%20(2).html#about">Explore the System →</a>
   </div>
 </section>
 
 <!-- ABOUT -->
-<section class="about" id="about">
+<section class="about" id="about" style="position:relative;">
   <div class="container">
-    <div class="about-grid">
+<div style="position:absolute;bottom:2rem;right:2rem;opacity:0.28;pointer-events:none;">
+<svg width="130" height="130" viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g stroke="#2B4A7C" stroke-width="0.7" stroke-linecap="round">
+    <!-- Outer spiral -->
+    <path d="M65 10 C95 10 118 33 118 63 C118 95 93 118 61 116 C27 114 6 88 8 56 C10 24 38 4 70 6 C104 8 124 36 122 70 C120 106 90 128 54 124"></path>
+    <!-- Inner chambers -->
+    <path d="M65 28 C86 28 102 44 102 65 C102 87 84 104 62 102 C40 100 24 82 26 60 C28 38 48 24 70 26"></path>
+    <path d="M65 44 C78 44 88 54 88 67 C88 80 77 90 64 88 C51 86 42 74 44 61 C46 48 56 42 69 44"></path>
+    <path d="M65 56 C72 56 78 62 78 69 C78 76 71 82 64 80 C57 78 52 72 54 65 C56 58 61 54 68 56"></path>
+    <path d="M65 64 C68 64 71 67 71 70 C71 73 68 76 65 75 C62 74 60 71 61 68 C62 65 63 63 66 64"></path>
+    <!-- Spiral line -->
+    <path d="M65 75 C62 80 58 88 54 96 C50 104 46 112 44 118"></path>
+    <!-- Radial chamber lines -->
+    <path d="M65 10 C64 28 64 44 65 56" stroke-width="0.4"></path>
+    <path d="M118 63 C102 64 88 65 78 66" stroke-width="0.4"></path>
+    <path d="M61 116 C62 100 63 88 64 78" stroke-width="0.4"></path>
+    <path d="M8 58 C26 60 44 62 54 64" stroke-width="0.4"></path>
+    <path d="M70 6 C70 24 69 42 68 56" stroke-width="0.4"></path>
+    <path d="M116 72 C100 70 88 68 78 68" stroke-width="0.4"></path>
+    <!-- Stipple texture -->
+    <circle cx="85" cy="50" r="0.8" fill="#2B4A7C"></circle>
+    <circle cx="92" cy="62" r="0.7" fill="#2B4A7C"></circle>
+    <circle cx="86" cy="76" r="0.7" fill="#2B4A7C"></circle>
+    <circle cx="72" cy="88" r="0.8" fill="#2B4A7C"></circle>
+    <circle cx="55" cy="84" r="0.7" fill="#2B4A7C"></circle>
+    <circle cx="44" cy="72" r="0.7" fill="#2B4A7C"></circle>
+    <circle cx="46" cy="56" r="0.8" fill="#2B4A7C"></circle>
+    <circle cx="55" cy="44" r="0.7" fill="#2B4A7C"></circle>
+  </g>
+  <text x="30" y="126" font-family="Georgia,serif" font-style="italic" font-size="7" fill="#2B4A7C">Nautilus pompilius</text>
+</svg>
+</div>    <div class="about-grid">
       <div class="reveal">
-        <span class="section-label">The Foundation</span>
+
+<!-- Stipple specimen illustration -->
+<div style="float:right;margin:0 0 2rem 3rem;opacity:0.32;shape-outside:circle();" class="reveal">
+<svg width="120" height="160" viewBox="0 0 120 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Stipple-style jellyfish (Haeckel) -->
+  <g stroke="#525252" stroke-width="0.5" stroke-linecap="round">
+    <!-- Bell -->
+    <path d="M60 20 C80 18 95 28 98 44 C100 58 90 70 74 76 C60 80 46 78 36 70 C24 60 22 46 28 34 C34 22 48 18 60 20Z"></path>
+    <!-- Radial ribs -->
+    <path d="M60 20 L60 76" stroke-width="0.3"></path>
+    <path d="M60 20 L40 70" stroke-width="0.3"></path>
+    <path d="M60 20 L80 70" stroke-width="0.3"></path>
+    <path d="M60 20 L28 50" stroke-width="0.3"></path>
+    <path d="M60 20 L92 50" stroke-width="0.3"></path>
+    <!-- Tentacles -->
+    <path d="M36 72 C32 85 28 100 30 115 C32 125 30 130 28 140"></path>
+    <path d="M46 78 C44 92 42 108 44 122 C46 132 44 138 42 150"></path>
+    <path d="M60 80 C60 95 58 110 60 125 C62 135 60 142 58 155"></path>
+    <path d="M74 78 C76 92 78 108 76 122 C74 132 76 138 78 150"></path>
+    <path d="M84 72 C88 86 92 100 90 115 C88 125 90 130 92 140"></path>
+    <!-- Stipple texture on bell -->
+    <circle cx="50" cy="38" r="0.8" fill="#525252"></circle>
+    <circle cx="60" cy="35" r="0.8" fill="#525252"></circle>
+    <circle cx="70" cy="38" r="0.8" fill="#525252"></circle>
+    <circle cx="46" cy="48" r="0.7" fill="#525252"></circle>
+    <circle cx="56" cy="45" r="0.7" fill="#525252"></circle>
+    <circle cx="66" cy="45" r="0.7" fill="#525252"></circle>
+    <circle cx="76" cy="48" r="0.7" fill="#525252"></circle>
+    <circle cx="44" cy="58" r="0.6" fill="#525252"></circle>
+    <circle cx="54" cy="56" r="0.6" fill="#525252"></circle>
+    <circle cx="64" cy="56" r="0.6" fill="#525252"></circle>
+    <circle cx="74" cy="58" r="0.6" fill="#525252"></circle>
+    <circle cx="50" cy="66" r="0.5" fill="#525252"></circle>
+    <circle cx="60" cy="68" r="0.5" fill="#525252"></circle>
+    <circle cx="70" cy="66" r="0.5" fill="#525252"></circle>
+  </g>
+  <text x="20" y="158" font-family="Georgia,serif" font-style="italic" font-size="7" fill="#525252">Medusozoa sp.</text>
+</svg>
+</div>        <span class="section-label">The Foundation</span>
         <h2 class="section-title">One code.<br>Every kingdom.</h2>
         <div class="gold-divider"></div>
         <p class="section-body">The EA is a theoretical framework — a working hypothesis, not an established doctrine. Similar to how the Periodic Table organises elements by atomic structure, the EA organises homeopathic remedies by their position in the evolutionary hierarchy.</p>
@@ -410,10 +525,65 @@ footer p { font-size:0.68rem; font-weight:300; letter-spacing:0.15em; text-trans
   </div>
 </section>
 
+<!-- geological strata divider -->
+<div style="width:100%;overflow:hidden;line-height:0;opacity:0.5;">
+  <svg width="100%" height="18" viewBox="0 0 1200 18" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 4 Q300 2 600 5 Q900 8 1200 4" stroke="#2B4A7C" stroke-width="0.6" fill="none"></path>
+    <path d="M0 8 Q200 6 500 9 Q800 12 1200 8" stroke="#2B4A7C" stroke-width="0.4" fill="none" opacity="0.6"></path>
+    <path d="M0 13 Q400 11 700 14 Q1000 17 1200 13" stroke="#2B4A7C" stroke-width="0.4" fill="none" opacity="0.5"></path>
+  </svg>
+</div>
 <!-- THE CODE -->
-<section class="code-section" id="code">
-  <div class="container">
-    <span class="section-label">The Framework</span>
+<section class="code-section" id="code" style="position:relative;">
+  <div class="container" style="position:relative;">
+<div style="position:absolute;top:3rem;right:3rem;opacity:0.32;pointer-events:none;">
+<svg width="110" height="140" viewBox="0 0 110 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g stroke="#fff44f" stroke-width="0.7" stroke-linecap="round">
+    <!-- Vertebra 1 - top view with processes -->
+    <ellipse cx="55" cy="22" rx="18" ry="14"></ellipse>
+    <path d="M55 8 C52 2 50 -2 55 0 C60 -2 58 2 55 8"></path>
+    <path d="M37 22 C30 18 24 16 22 20 C20 24 24 28 30 26"></path>
+    <path d="M73 22 C80 18 86 16 88 20 C90 24 86 28 80 26"></path>
+    <path d="M55 36 C52 42 50 46 55 44 C60 46 58 42 55 36"></path>
+    <ellipse cx="55" cy="22" rx="8" ry="6"></ellipse>
+    <!-- Stipple on centrum -->
+    <circle cx="50" cy="20" r="0.6" fill="#fff44f"></circle>
+    <circle cx="56" cy="18" r="0.6" fill="#fff44f"></circle>
+    <circle cx="62" cy="20" r="0.6" fill="#fff44f"></circle>
+    <circle cx="58" cy="25" r="0.6" fill="#fff44f"></circle>
+
+    <!-- Vertebra 2 -->
+    <ellipse cx="55" cy="72" rx="18" ry="14"></ellipse>
+    <path d="M55 58 C52 52 50 48 55 50 C60 48 58 52 55 58"></path>
+    <path d="M37 72 C30 68 24 66 22 70 C20 74 24 78 30 76"></path>
+    <path d="M73 72 C80 68 86 66 88 70 C90 74 86 78 80 76"></path>
+    <path d="M55 86 C52 92 50 96 55 94 C60 96 58 92 55 86"></path>
+    <ellipse cx="55" cy="72" rx="8" ry="6"></ellipse>
+    <circle cx="50" cy="70" r="0.6" fill="#fff44f"></circle>
+    <circle cx="56" cy="68" r="0.6" fill="#fff44f"></circle>
+    <circle cx="62" cy="70" r="0.6" fill="#fff44f"></circle>
+
+    <!-- Vertebra 3 -->
+    <ellipse cx="55" cy="120" rx="18" ry="14"></ellipse>
+    <path d="M55 106 C52 100 50 96 55 98 C60 96 58 100 55 106"></path>
+    <path d="M37 120 C30 116 24 114 22 118 C20 122 24 126 30 124"></path>
+    <path d="M73 120 C80 116 86 114 88 118 C90 122 86 126 80 124"></path>
+    <path d="M55 134 C52 138 50 140 55 139 C60 140 58 138 55 134"></path>
+    <ellipse cx="55" cy="120" rx="8" ry="6"></ellipse>
+    <circle cx="50" cy="118" r="0.6" fill="#fff44f"></circle>
+    <circle cx="60" cy="116" r="0.6" fill="#fff44f"></circle>
+
+    <!-- Intervertebral discs -->
+    <line x1="47" y1="38" x2="47" y2="56" stroke-width="0.4"></line>
+    <line x1="55" y1="36" x2="55" y2="58" stroke-width="0.4"></line>
+    <line x1="63" y1="38" x2="63" y2="56" stroke-width="0.4"></line>
+    <line x1="47" y1="88" x2="47" y2="104" stroke-width="0.4"></line>
+    <line x1="55" y1="86" x2="55" y2="106" stroke-width="0.4"></line>
+    <line x1="63" y1="88" x2="63" y2="104" stroke-width="0.4"></line>
+  </g>
+  <text x="10" y="138" font-family="Georgia,serif" font-style="italic" font-size="7" fill="#fff44f">Vertebrae · Chordata</text>
+</svg>
+</div>    <span class="section-label">The Framework</span>
     <h2 class="section-title reveal">The 7-Level Code</h2>
     <p class="section-body reveal" style="transition-delay:0.15s;">Like DNA encodes form, the EA Code encodes the homeopathic identity of a remedy. Click any level to explore its meaning, tables, and clinical application.</p>
     <div class="code-levels reveal" style="transition-delay:0.3s;">
@@ -426,18 +596,42 @@ footer p { font-size:0.68rem; font-weight:300; letter-spacing:0.15em; text-trans
       <div class="code-level" onclick="openCodePanel(&#39;species&#39;)"><div class="code-level-num">Level 07</div><div class="code-level-name">Species</div><div class="code-level-dim">Stage 1–18</div><div class="code-level-desc">How far have I come? Position on the arc from emergence to completion</div><div class="click-hint">↑ click to explore</div></div>
     </div>
     <div style="margin-top:3rem;" class="reveal">
-      <p style="font-size:0.72rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:rgba(237,232,220,0.5);">Example Code — Lac caninum</p>
+      <p style="font-size:0.72rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:rgba(249,246,240,0.5);">Example Code — Lac caninum</p>
       <p style="margin-top:0.8rem;font-family:&#39;Playfair Display&#39;,serif;font-size:1.4rem;color:var(--gold-light);letter-spacing:0.08em;">6 · 7 · 6 · 4 · 4 · 2 · 01</p>
-      <p style="margin-top:0.4rem;font-size:0.85rem;color:rgba(237,232,220,0.45);font-style:italic;">Animalia · Chordata · I long to lead · I take control &nbsp;·&nbsp; I am the responsible one · I am uncertain &nbsp;·&nbsp; Stage 1</p>
+      <p style="margin-top:1rem;font-size:0.88rem;color:rgba(249,246,240,0.75);font-style:italic;line-height:1.8;max-width:480px;">The world feels competitive — a game that must be won. The life task is learning to let go. The longing is to lead. Under pressure, they take control. In every group, they become the responsible one — though they feel uncertain in that role. Initiating.</p>
     </div>
   </div>
 </section>
 
+<!-- geological strata divider -->
+<div style="width:100%;overflow:hidden;line-height:0;opacity:0.5;">
+  <svg width="100%" height="18" viewBox="0 0 1200 18" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 4 Q300 2 600 5 Q900 8 1200 4" stroke="#2B4A7C" stroke-width="0.6" fill="none"></path>
+    <path d="M0 8 Q200 6 500 9 Q800 12 1200 8" stroke="#2B4A7C" stroke-width="0.4" fill="none" opacity="0.6"></path>
+    <path d="M0 13 Q400 11 700 14 Q1000 17 1200 13" stroke="#2B4A7C" stroke-width="0.4" fill="none" opacity="0.5"></path>
+  </svg>
+</div>
 <!-- KINGDOMS -->
-<section class="kingdoms" id="kingdoms">
+<section class="kingdoms" id="kingdoms" style="position:relative;">
   <div class="container">
+<div style="position:absolute;top:4rem;right:4rem;opacity:0.22;pointer-events:none;">
+<svg width="140" height="140" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g stroke="#525252" stroke-width="0.8" stroke-linecap="round">
+    <!-- Ammonite spiral - logarithmic -->
+    <path d="M70 70 C70 58 78 50 90 50 C102 50 112 60 112 72 C112 86 100 98 86 100 C70 102 56 94 50 80 C44 66 48 50 60 40 C72 30 90 28 104 36 C118 44 126 58 126 74 C126 92 114 108 96 114 C76 120 54 112 44 94 C34 76 40 52 56 38 C72 24 96 22 114 30"></path>
+    <path d="M70 70 C70 62 76 56 84 56 C92 56 98 62 98 70 C98 78 92 84 84 86 C76 88 68 82 66 74 C64 66 68 58 76 54 C84 50 94 52 100 60"></path>
+    <path d="M70 70 C70 64 74 60 80 60 C86 60 90 64 90 70 C90 76 86 80 80 80 C74 80 70 76 70 70Z"></path>
+    <!-- Septum lines (suture patterns) -->
+    <path d="M90 50 C88 56 84 60 80 62" stroke-width="0.4"></path>
+    <path d="M112 72 C106 72 100 74 96 78" stroke-width="0.4"></path>
+    <path d="M86 100 C84 94 82 88 82 82" stroke-width="0.4"></path>
+    <path d="M50 80 C56 78 62 76 66 72" stroke-width="0.4"></path>
+    <path d="M60 40 C62 46 64 52 66 58" stroke-width="0.4"></path>
+  </g>
+</svg>
+</div>
     <span class="section-label">Level One</span>
-    <h2 class="section-title reveal">The Seven Kingdoms</h2>
+    <h2 class="section-title reveal" style="color:#525252;">The Seven Kingdoms</h2>
     <p class="section-body reveal" style="transition-delay:0.15s;">Each kingdom answers a fundamental existential question and corresponds to a phase in the evolution of consciousness. Click any kingdom to explore its full map.</p>
     <div class="kingdoms-grid reveal" style="transition-delay:0.3s;">
       <div class="kingdom-card" onclick="openKingdomPanel(&#39;mineralia&#39;)"><div class="kingdom-num">Kingdom 1</div><div class="kingdom-name">Mineralia</div><div class="kingdom-question">"Am I enough?"</div><div class="kingdom-stage">Birth — Infancy</div></div>
@@ -451,10 +645,58 @@ footer p { font-size:0.68rem; font-weight:300; letter-spacing:0.15em; text-trans
   </div>
 </section>
 
+<!-- geological strata divider -->
+<div style="width:100%;overflow:hidden;line-height:0;opacity:0.5;">
+  <svg width="100%" height="18" viewBox="0 0 1200 18" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 4 Q300 2 600 5 Q900 8 1200 4" stroke="#2B4A7C" stroke-width="0.6" fill="none"></path>
+    <path d="M0 8 Q200 6 500 9 Q800 12 1200 8" stroke="#2B4A7C" stroke-width="0.4" fill="none" opacity="0.6"></path>
+    <path d="M0 13 Q400 11 700 14 Q1000 17 1200 13" stroke="#2B4A7C" stroke-width="0.4" fill="none" opacity="0.5"></path>
+  </svg>
+</div>
 <!-- HOW -->
-<section class="how" id="how">
+<section class="how" id="how" style="position:relative;">
   <div class="container">
-    <span class="section-label">Clinical Application</span>
+<div style="position:absolute;top:4rem;right:1.5rem;opacity:0.28;pointer-events:none;">
+<svg width="90" height="200" viewBox="0 0 90 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g stroke="#2B4A7C" stroke-width="0.65" stroke-linecap="round">
+    <!-- Main rachis -->
+    <path d="M45 195 C44 160 43 120 44 80 C45 50 47 25 45 5"></path>
+    <!-- Left pinnae - pairs going up -->
+    <path d="M44 170 C36 163 26 158 18 156 C26 157 36 162 44 168"></path>
+    <path d="M44 155 C34 146 22 140 12 138 C22 139 34 145 44 153"></path>
+    <path d="M44 140 C32 130 18 124 8 122 C18 123 32 129 44 138"></path>
+    <path d="M44 125 C34 115 20 108 10 106 C20 107 34 113 44 123"></path>
+    <path d="M44 110 C36 100 24 94 14 92 C24 93 36 99 44 108"></path>
+    <path d="M44 95 C38 86 28 80 18 78 C28 79 38 85 44 93"></path>
+    <path d="M44 80 C38 72 30 67 22 65 C30 66 38 71 44 78"></path>
+    <path d="M44 66 C39 59 32 54 26 52 C32 53 39 58 44 64"></path>
+    <path d="M44 54 C40 47 35 43 30 41 C35 42 40 46 44 52"></path>
+    <!-- Right pinnae -->
+    <path d="M45 170 C53 163 63 158 71 156 C63 157 53 162 45 168"></path>
+    <path d="M45 155 C55 146 67 140 77 138 C67 139 55 145 45 153"></path>
+    <path d="M45 140 C57 130 71 124 81 122 C71 123 57 129 45 138"></path>
+    <path d="M45 125 C55 115 69 108 79 106 C69 107 55 113 45 123"></path>
+    <path d="M45 110 C53 100 65 94 75 92 C65 93 53 99 45 108"></path>
+    <path d="M45 95 C51 86 61 80 71 78 C61 79 51 85 45 93"></path>
+    <path d="M45 80 C51 72 59 67 67 65 C59 66 51 71 45 78"></path>
+    <path d="M45 66 C50 59 57 54 63 52 C57 53 50 58 45 64"></path>
+    <!-- Pinnule veins on larger pinnae -->
+    <path d="M18 156 C22 152 24 148 22 144" stroke-width="0.35"></path>
+    <path d="M12 138 C16 133 18 128 16 124" stroke-width="0.35"></path>
+    <path d="M8 122 C12 117 14 112 12 108" stroke-width="0.35"></path>
+    <path d="M71 156 C67 152 65 148 67 144" stroke-width="0.35"></path>
+    <path d="M77 138 C73 133 71 128 73 124" stroke-width="0.35"></path>
+    <!-- Spore dots (sori) -->
+    <circle cx="20" cy="149" r="1" fill="#2B4A7C"></circle>
+    <circle cx="16" cy="132" r="1" fill="#2B4A7C"></circle>
+    <circle cx="13" cy="116" r="1" fill="#2B4A7C"></circle>
+    <circle cx="69" cy="149" r="1" fill="#2B4A7C"></circle>
+    <circle cx="73" cy="132" r="1" fill="#2B4A7C"></circle>
+    <circle cx="76" cy="116" r="1" fill="#2B4A7C"></circle>
+  </g>
+  <text x="0" y="200" font-family="Georgia,serif" font-style="italic" font-size="6.5" fill="#2B4A7C">Pteridophyta</text>
+</svg>
+</div>    <span class="section-label">Clinical Application</span>
     <h2 class="section-title reveal">How to Read a Case</h2>
     <p class="section-body reveal" style="transition-delay:0.15s;">Five structured steps move a patient's story into a precise evolutionary code.</p>
     <div class="steps">
@@ -467,28 +709,111 @@ footer p { font-size:0.68rem; font-weight:300; letter-spacing:0.15em; text-trans
   </div>
 </section>
 
+<!-- geological strata divider -->
+<div style="width:100%;overflow:hidden;line-height:0;opacity:0.5;">
+  <svg width="100%" height="18" viewBox="0 0 1200 18" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 4 Q300 2 600 5 Q900 8 1200 4" stroke="#2B4A7C" stroke-width="0.6" fill="none"></path>
+    <path d="M0 8 Q200 6 500 9 Q800 12 1200 8" stroke="#2B4A7C" stroke-width="0.4" fill="none" opacity="0.6"></path>
+    <path d="M0 13 Q400 11 700 14 Q1000 17 1200 13" stroke="#2B4A7C" stroke-width="0.4" fill="none" opacity="0.5"></path>
+  </svg>
+</div>
 <!-- CASES -->
-<section class="cases" id="cases">
+<section class="cases" id="cases" style="position:relative;">
+<!-- Amoeba & Bacterium sketch — Protista/Monera -->
+<div style="position:absolute;top:3rem;right:2rem;opacity:0.28;pointer-events:none;">
+<svg width="150" height="180" viewBox="0 0 150 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g stroke="#2B4A7C" stroke-width="0.7" stroke-linecap="round">
+    <!-- AMOEBA — irregular blobby outline with pseudopods -->
+    <path d="M55 30 C62 20 72 18 80 22 C90 18 98 22 102 30 C110 28 116 34 112 42 C118 48 116 58 108 62 C110 70 106 78 98 80 C96 88 88 92 80 90 C74 96 64 94 58 88 C50 90 44 84 44 76 C36 72 34 62 40 54 C34 46 36 36 44 32 C48 28 52 28 55 30Z"></path>
+    <!-- Nucleus -->
+    <ellipse cx="78" cy="56" rx="14" ry="10"></ellipse>
+    <ellipse cx="78" cy="56" rx="8" ry="6" stroke-width="0.4"></ellipse>
+    <!-- Nucleolus -->
+    <circle cx="78" cy="56" r="2.5" fill="#2B4A7C" opacity="0.4"></circle>
+    <!-- Pseudopods -->
+    <path d="M102 30 C110 22 118 18 120 24 C122 30 116 36 108 38"></path>
+    <path d="M112 42 C120 38 128 40 128 48 C128 56 120 58 112 56"></path>
+    <path d="M44 32 C38 22 30 20 28 28 C26 36 34 42 42 40"></path>
+    <path d="M40 54 C30 52 24 58 26 66 C28 74 38 74 42 68"></path>
+    <path d="M58 88 C54 96 56 106 64 106 C72 106 76 98 72 92"></path>
+    <path d="M98 80 C102 90 100 100 92 102 C84 104 80 96 84 90"></path>
+    <!-- Vacuoles - stipple -->
+    <circle cx="60" cy="44" r="5" stroke-width="0.5"></circle>
+    <circle cx="96" cy="48" r="4" stroke-width="0.5"></circle>
+    <circle cx="70" cy="76" r="3.5" stroke-width="0.5"></circle>
+    <!-- Fine stipple texture -->
+    <circle cx="66" cy="36" r="0.8" fill="#2B4A7C"></circle>
+    <circle cx="90" cy="34" r="0.7" fill="#2B4A7C"></circle>
+    <circle cx="50" cy="60" r="0.7" fill="#2B4A7C"></circle>
+    <circle cx="104" cy="62" r="0.7" fill="#2B4A7C"></circle>
+    <circle cx="82" cy="82" r="0.8" fill="#2B4A7C"></circle>
+  </g>
+  <text x="32" y="116" font-family="Georgia,serif" font-style="italic" font-size="7.5" fill="#2B4A7C">Amoeba proteus</text>
+
+  <!-- BACTERIUM — rod-shaped with flagella -->
+  <g stroke="#2B4A7C" stroke-width="0.65" stroke-linecap="round">
+    <!-- Cell body — rod shape -->
+    <path d="M30 148 C30 140 34 136 42 136 C80 136 96 136 104 136 C112 136 116 140 116 148 C116 156 112 160 104 160 C96 160 44 160 42 160 C34 160 30 156 30 148Z"></path>
+    <!-- Cell wall inner line -->
+    <path d="M34 148 C34 142 38 138 44 138 C80 138 98 138 102 138 C108 138 112 142 112 148 C112 154 108 158 102 158 C98 158 42 158 44 158 C38 158 34 154 34 148Z" stroke-width="0.35"></path>
+    <!-- Nucleoid region -->
+    <path d="M60 142 C65 140 75 140 80 142 C85 144 85 152 80 154 C75 156 65 156 60 154 C55 152 55 144 60 142Z" stroke-width="0.5"></path>
+    <!-- Flagella -->
+    <path d="M30 148 C22 144 14 138 10 130 C8 124 12 120 18 124 C22 128 24 136 28 142"></path>
+    <path d="M30 152 C20 156 12 164 8 172 C6 178 10 182 16 178 C22 174 26 164 28 156"></path>
+    <path d="M116 146 C126 140 134 132 138 124 C140 118 136 114 130 118 C124 122 120 132 118 140"></path>
+    <!-- Ribosomes — dots -->
+    <circle cx="50" cy="146" r="1" fill="#2B4A7C"></circle>
+    <circle cx="58" cy="150" r="1" fill="#2B4A7C"></circle>
+    <circle cx="88" cy="146" r="1" fill="#2B4A7C"></circle>
+    <circle cx="96" cy="151" r="1" fill="#2B4A7C"></circle>
+    <circle cx="72" cy="144" r="0.8" fill="#2B4A7C"></circle>
+  </g>
+  <text x="35" y="176" font-family="Georgia,serif" font-style="italic" font-size="7.5" fill="#2B4A7C">Bacterium sp.</text>
+</svg>
+</div>
   <div class="container">
     <div class="cases-intro">
-      <div class="reveal"><span class="section-label">The System in Practice</span><h2 class="section-title">Case Studies</h2><div class="gold-divider"></div><p class="section-body">Five documented cases demonstrate the EA Code moving from patient language to remedy selection — across mineral, plant, animal, and protist kingdoms.</p></div>
+      <div class="reveal"><span class="section-label">The System in Practice</span><h2 class="section-title" style="color:#525252;">Case Studies</h2><div class="gold-divider"></div><p class="section-body">Five documented cases demonstrate the EA Code moving from patient language to remedy selection — across mineral, plant, animal, and protist kingdoms.</p></div>
       <div class="reveal" style="transition-delay:0.2s;"><p class="section-body" style="font-style:italic;color:var(--mid);">Each case is mapped digit by digit — showing how the code narrows the field from kingdom to simillimum, and how the system differentiates between closely related remedies such as Crocuta crocuta and Lac caninum.</p></div>
     </div>
     <div class="case-cards">
-      <div class="case-card reveal" onclick="openCasePanel(&#39;phosphorus&#39;)"><div class="case-code">Code · 1-3-3-3-2-6-15</div><div class="case-title">Bridging Radiance and Depletion</div><div class="case-remedy">Phosphorus 200C · Mineralia</div><div class="case-desc">A vivacious woman depleted despite doing everything right. The code reveals how her outward radiance masks a structural collapse at the mineral level.</div><div class="click-hint" style="color:var(--gold);margin-top:1rem;">Read full case →</div></div>
-      <div class="case-card reveal" style="transition-delay:0.1s;" onclick="openCasePanel(&#39;carcinosinum&#39;)"><div class="case-code">Code · 2-7-12</div><div class="case-title">The Mask of Perfection</div><div class="case-remedy">Carcinosinum 200C · Monera</div><div class="case-desc">Hormonal rosacea, suppressed emotion, and a perfectionist streak. The Monera kingdom reveals the fragmented self formed under chronic emotional pressure.</div><div class="click-hint" style="color:var(--gold);margin-top:1rem;">Read full case →</div></div>
-      <div class="case-card reveal" style="transition-delay:0.2s;" onclick="openCasePanel(&#39;malaria&#39;)"><div class="case-code">Code · 3-…</div><div class="case-title">Trapped in a Loop</div><div class="case-remedy">Malaria officinalis 200C · Protista</div><div class="case-desc">Cyclical migraines, manic-fatigue cycles, and an unshakeable rhythm. The Protista kingdom maps the parasitic pattern ruling this patient's life.</div><div class="click-hint" style="color:var(--gold);margin-top:1rem;">Read full case →</div></div>
-      <div class="case-card reveal" style="transition-delay:0.3s;" onclick="openCasePanel(&#39;arnica&#39;)"><div class="case-code">Code · 5-7-5-6-4-4-08</div><div class="case-title">A Web of Old Wounds</div><div class="case-remedy">Arnica montana 1M · Plantae</div><div class="case-desc">Recurrent joint swellings following a spider bite. Arnica is mapped to the Asteraceae family in Plantae — trauma, inflammation, and immune modulation.</div><div class="click-hint" style="color:var(--gold);margin-top:1rem;">Read full case →</div></div>
-      <div class="case-card reveal" style="transition-delay:0.4s;" onclick="openCasePanel(&#39;lac&#39;)"><div class="case-code">Code · 6-773.26.12</div><div class="case-title">Starved for Love</div><div class="case-remedy">Lac caninum 1M · Animalia</div><div class="case-desc">Emotional eating, betrayal, and suppressed desire. The Animal kingdom — and the fine distinction between Hyena and Dog's Milk — resolves the simillimum.</div><div class="click-hint" style="color:var(--gold);margin-top:1rem;">Read full case →</div></div>
+      <div class="case-card reveal" onclick="openCasePanel(&#39;phosphorus&#39;)"><div class="case-code">1 · 3 · 3 · 3 · 2 · 6 · 15</div><div class="case-title">Bridging Radiance and Depletion</div><div class="case-remedy">Phosphorus 200C · Mineralia</div><div class="case-desc">A vivacious woman depleted despite doing everything right. The code reveals how her outward radiance masks a structural collapse at the mineral level.</div><div class="click-hint" style="color:var(--gold);margin-top:1rem;">Read full case →</div></div>
+      <div class="case-card reveal" style="transition-delay:0.1s;" onclick="openCasePanel(&#39;carcinosinum&#39;)"><div class="case-code">7 · 7 · 7 · 7 · 2 · 6 · 17</div><div class="case-title">The Mask of Perfection</div><div class="case-remedy">Carcinosinum 200C · Homo Sapiens</div><div class="case-desc">Hormonal rosacea, suppressed emotion, and a perfectionist streak. The Homo Sapiens kingdom — the realm of self-consciousness and the suppressed self — maps the perfectionist pattern at its deepest level.</div><div class="click-hint" style="color:var(--gold);margin-top:1rem;">Read full case →</div></div>
+      <div class="case-card reveal" style="transition-delay:0.2s;" onclick="openCasePanel(&#39;malaria&#39;)"><div class="case-code">3 · 5 · 7 · 7 · 7 · 7 · 12</div><div class="case-title">Trapped in a Loop</div><div class="case-remedy">Malaria officinalis 200C · Protista</div><div class="case-desc">Cyclical migraines, manic-fatigue cycles, and an unshakeable rhythm. The Protista kingdom maps the parasitic pattern ruling this patient's life.</div><div class="click-hint" style="color:var(--gold);margin-top:1rem;">Read full case →</div></div>
+      <div class="case-card reveal" style="transition-delay:0.3s;" onclick="openCasePanel(&#39;arnica&#39;)"><div class="case-code">5 · 7 · 2 · 5 · 4 · 4 · 08</div><div class="case-title">A Web of Old Wounds</div><div class="case-remedy">Arnica montana 1M · Plantae</div><div class="case-desc">Recurrent joint swellings following a spider bite. Arnica is mapped to the Asteraceae family in Plantae — trauma, inflammation, and immune modulation.</div><div class="click-hint" style="color:var(--gold);margin-top:1rem;">Read full case →</div></div>
+      <div class="case-card reveal" style="transition-delay:0.4s;" onclick="openCasePanel(&#39;lac&#39;)"><div class="case-code">6 · 7 · 6 · 4 · 4 · 2 · 01</div><div class="case-title">Starved for Love</div><div class="case-remedy">Lac caninum 1M · Animalia</div><div class="case-desc">Emotional eating, betrayal, and suppressed desire. The Animal kingdom — and the fine distinction between Hyena and Dog's Milk — resolves the simillimum.</div><div class="click-hint" style="color:var(--gold);margin-top:1rem;">Read full case →</div></div>
     </div>
   </div>
 </section>
 
 
 <!-- FOUNDER -->
-<section class="founders" id="founder">
-  <div class="container">
-    <div class="founders-inner">
+<section class="founders" id="founder" style="position:relative;">
+  <div class="container" style="position:relative;">
+<div style="position:absolute;bottom:2rem;right:3rem;opacity:0.25;pointer-events:none;">
+<svg width="180" height="100" viewBox="0 0 180 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Cave painting style whale - simple gestural lines -->
+  <g stroke="#faf9f6" stroke-width="1.2" stroke-linecap="round" fill="none">
+    <path d="M10 55 C30 40 55 32 80 30 C105 28 130 32 150 42 C165 50 172 60 168 70 C164 80 150 85 130 84 C110 83 90 78 70 74 C50 70 30 68 15 65 C8 62 8 58 10 55Z"></path>
+    <path d="M168 70 C172 65 178 58 175 52 C172 46 165 44 160 46"></path>
+    <path d="M90 30 C92 20 88 12 82 8"></path>
+    <!-- Eye -->
+    <circle cx="145" cy="48" r="3" stroke="#faf9f6" stroke-width="0.8"></circle>
+    <!-- Barnacle marks -->
+    <circle cx="100" cy="55" r="1.5" stroke="#faf9f6" stroke-width="0.6"></circle>
+    <circle cx="115" cy="60" r="1" stroke="#faf9f6" stroke-width="0.6"></circle>
+    <circle cx="85" cy="58" r="1.2" stroke="#faf9f6" stroke-width="0.6"></circle>
+    <!-- Flukes -->
+    <path d="M10 55 C5 48 2 42 6 38 C10 34 16 36 18 42"></path>
+    <path d="M10 55 C4 58 0 65 4 70 C8 75 14 72 16 66"></path>
+  </g>
+  <!-- Hand marks like cave paintings -->
+  <g stroke="#2B4A7C" stroke-width="0.6" opacity="0.6">
+    <path d="M35 85 C33 78 34 72 36 68 M36 68 C34 66 32 65 30 66 M36 68 C36 65 35 63 34 62 M36 68 C38 65 38 63 37 62 M36 68 C39 67 40 65 40 63"></path>
+  </g>
+</svg>
+</div>    <div class="founders-inner">
       <div class="reveal">
         <div class="founders-name-block">
           <div class="founders-name">Claudia<br>Regojo</div>
@@ -497,12 +822,227 @@ footer p { font-size:0.68rem; font-weight:300; letter-spacing:0.15em; text-trans
       </div>
       <div class="reveal" style="transition-delay:0.2s;">
         <blockquote class="founders-quote">Every remedy in the code is part of an evolutionary conversation. Minerals cry out from failure of form. Nosodes echo trauma from invasion. Fungi show us what happens when we adapt too much. And humans, in the centre of all this, must remember who they are. Healing is not becoming symptom-free. Healing is becoming aligned with the truth of your code.</blockquote>
-        <p style="font-size:0.68rem;font-weight:300;letter-spacing:0.15em;text-transform:uppercase;color:rgba(212,96,90,0.5);margin-top:1.5rem;">From: The Evolutionary Code — A Homeopathic Map of Consciousness, 2025</p>
+        <p style="font-size:0.68rem;font-weight:300;letter-spacing:0.15em;text-transform:uppercase;color:rgba(43,74,124,0.5);margin-top:1.5rem;">From: The Evolutionary Code — A Homeopathic Map of Consciousness, 2025</p>
       </div>
     </div>
   </div>
 </section>
 
+<!-- EVOLUTIONARY SEQUENCE PLATE -->
+<section style="background:var(--parchment);padding:4rem 0 2rem;border-top:1px solid rgba(43,74,124,0.2);">
+  <div class="container">
+    <span style="font-family:&#39;Lora&#39;,serif;font-size:0.7rem;letter-spacing:0.28em;text-transform:uppercase;color:#2B4A7C;display:block;text-align:center;margin-bottom:0.5rem;">— Natural History Plate —</span>
+    <h3 style="font-family:&#39;Playfair Display&#39;,serif;font-weight:400;font-style:italic;font-size:1.3rem;color:var(--dark-section);text-align:center;margin-bottom:0.3rem;">The Evolutionary Arc</h3>
+    <p style="font-family:&#39;Lora&#39;,serif;font-size:0.78rem;color:var(--mid);text-align:center;margin-bottom:2.5rem;font-style:italic;">From the first life to the most complex — each organism an adaptive strategy, each a remedy</p>
+    <div style="position:relative;width:100%;overflow:hidden;">
+      <svg viewBox="0 0 1100 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:1100px;display:block;margin:0 auto;">
+        <g fill="none" stroke="#525252" stroke-linecap="round" stroke-linejoin="round">
+
+          <!-- 1. AMMONITE FOSSIL — Kingdom 1/2 Cambrian -->
+          <g transform="translate(40,70)" stroke-width="0.6">
+            <path d="M40 40 C40 28 48 20 60 20 C72 20 82 30 82 42 C82 56 70 68 56 70 C40 72 26 64 20 50 C14 36 18 20 30 10 C42 0 60 -2 74 6"></path>
+            <path d="M40 40 C40 32 46 26 54 26 C62 26 68 32 68 40 C68 48 62 54 54 56 C46 58 38 52 36 44"></path>
+            <path d="M40 40 C40 34 44 30 50 30 C56 30 60 34 60 40 C60 46 56 50 50 50 C44 50 40 46 40 40Z"></path>
+            <path d="M60 20 C58 26 54 30 50 32" stroke-width="0.35"></path>
+            <path d="M82 42 C76 42 70 44 66 48" stroke-width="0.35"></path>
+            <path d="M56 70 C54 64 52 58 52 52" stroke-width="0.35"></path>
+            <!-- stipple dots -->
+            <circle cx="65" cy="22" r="0.8" fill="#525252"></circle>
+            <circle cx="80" cy="35" r="0.6" fill="#525252"></circle>
+            <circle cx="75" cy="55" r="0.7" fill="#525252"></circle>
+            <circle cx="52" cy="68" r="0.8" fill="#525252"></circle>
+            <circle cx="32" cy="60" r="0.6" fill="#525252"></circle>
+          </g>
+          <text x="55" y="160" font-family="Georgia,serif" font-style="italic" font-size="8.5" fill="#525252">1. Ammonites</text>
+          <text x="52" y="170" font-family="Georgia,serif" font-size="7" fill="#7A7A7A">Cambrian · 500 mya</text>
+
+          <!-- Arrow -->
+          <path d="M105 100 L125 100" stroke="#2B4A7C" stroke-width="0.7"></path>
+          <path d="M120 97 L126 100 L120 103" stroke="#2B4A7C" stroke-width="0.7" fill="none"></path>
+
+          <!-- 2. PRIMITIVE FISH — Devonian -->
+          <g transform="translate(135,60)" stroke-width="0.65">
+            <!-- Body outline -->
+            <path d="M10 45 C15 30 30 22 55 20 C75 18 90 24 98 35 C104 43 100 55 90 62 C78 70 60 72 42 68 C24 64 12 58 10 45Z"></path>
+            <!-- Tail fin -->
+            <path d="M10 45 C4 38 0 30 4 24 C6 20 10 22 10 28"></path>
+            <path d="M10 45 C4 52 0 60 4 66 C6 70 10 68 10 62"></path>
+            <!-- Dorsal fin -->
+            <path d="M55 20 C58 10 65 4 70 6 C73 8 72 14 68 20"></path>
+            <!-- Pectoral fin -->
+            <path d="M40 50 C35 44 30 40 28 44 C26 48 30 54 36 54 C40 54 42 52 40 50Z"></path>
+            <!-- Eye -->
+            <circle cx="84" cy="36" r="4" stroke-width="0.8"></circle>
+            <circle cx="85" cy="36" r="1.5" fill="#525252"></circle>
+            <!-- Scales - stipple rows -->
+            <circle cx="50" cy="38" r="0.7" fill="#525252"></circle><circle cx="58" cy="36" r="0.7" fill="#525252"></circle><circle cx="66" cy="36" r="0.7" fill="#525252"></circle>
+            <circle cx="54" cy="44" r="0.7" fill="#525252"></circle><circle cx="62" cy="42" r="0.7" fill="#525252"></circle><circle cx="70" cy="41" r="0.7" fill="#525252"></circle>
+            <circle cx="48" cy="50" r="0.7" fill="#525252"></circle><circle cx="56" cy="50" r="0.7" fill="#525252"></circle><circle cx="64" cy="48" r="0.7" fill="#525252"></circle>
+            <circle cx="50" cy="56" r="0.6" fill="#525252"></circle><circle cx="58" cy="56" r="0.6" fill="#525252"></circle>
+            <!-- lateral line -->
+            <path d="M30 45 C50 43 70 42 88 40" stroke-width="0.35" stroke-dasharray="2,2"></path>
+          </g>
+          <text x="178" y="160" font-family="Georgia,serif" font-style="italic" font-size="8.5" fill="#525252">2. Devonian Fish</text>
+          <text x="178" y="170" font-family="Georgia,serif" font-size="7" fill="#7A7A7A">Actinopterygii · 420 mya</text>
+
+          <!-- Arrow -->
+          <path d="M258 100 L278 100" stroke="#2B4A7C" stroke-width="0.7"></path>
+          <path d="M273 97 L279 100 L273 103" stroke="#2B4A7C" stroke-width="0.7" fill="none"></path>
+
+          <!-- 3. TIKTAALIK — Tetrapod transition -->
+          <g transform="translate(285,55)" stroke-width="0.65">
+            <!-- Body - longer, flatter -->
+            <path d="M8 50 C12 34 28 24 55 22 C78 20 98 28 108 42 C114 52 110 64 96 70 C80 76 58 76 38 70 C20 64 6 60 8 50Z"></path>
+            <!-- Tail -->
+            <path d="M8 50 C2 42 -2 32 2 26 C4 22 8 24 8 30"></path>
+            <path d="M8 50 C2 58 -2 66 2 72 C4 76 8 74 8 68"></path>
+            <!-- Fins becoming limbs - left front -->
+            <path d="M45 60 C40 68 34 74 30 78 C28 80 26 79 28 76 C32 70 38 64 42 62"></path>
+            <path d="M30 78 C28 82 30 86 34 84 C36 83 36 80 34 78"></path>
+            <path d="M34 78 C32 82 34 86 38 84"></path>
+            <path d="M38 82 C36 86 38 89 41 88"></path>
+            <!-- right front fin-limb -->
+            <path d="M52 28 C54 20 58 14 60 10 C62 7 64 8 62 11 C60 16 56 22 54 26"></path>
+            <!-- Eye -->
+            <circle cx="98" cy="36" r="4"></circle>
+            <circle cx="99" cy="36" r="1.8" fill="#525252"></circle>
+            <!-- Nostrils on top of head - key feature -->
+            <circle cx="105" cy="30" r="1.5" fill="#525252"></circle>
+            <circle cx="109" cy="30" r="1.5" fill="#525252"></circle>
+            <!-- scales -->
+            <circle cx="55" cy="42" r="0.7" fill="#525252"></circle><circle cx="65" cy="40" r="0.7" fill="#525252"></circle>
+            <circle cx="75" cy="40" r="0.7" fill="#525252"></circle><circle cx="60" cy="50" r="0.7" fill="#525252"></circle>
+            <circle cx="70" cy="50" r="0.7" fill="#525252"></circle><circle cx="80" cy="48" r="0.7" fill="#525252"></circle>
+          </g>
+          <text x="330" y="160" font-family="Georgia,serif" font-style="italic" font-size="8.5" fill="#525252">3. Tiktaalik</text>
+          <text x="322" y="170" font-family="Georgia,serif" font-size="7" fill="#7A7A7A">Tetrapod transition · 375 mya</text>
+
+          <!-- Arrow -->
+          <path d="M415 100 L435 100" stroke="#2B4A7C" stroke-width="0.7"></path>
+          <path d="M430 97 L436 100 L430 103" stroke="#2B4A7C" stroke-width="0.7" fill="none"></path>
+
+          <!-- 4. EARLY REPTILE — like a lizard -->
+          <g transform="translate(445,65)" stroke-width="0.65">
+            <!-- Body -->
+            <path d="M15 35 C20 22 38 14 58 14 C74 14 86 22 90 34 C94 46 86 56 70 60 C54 64 36 60 24 52 C14 46 12 42 15 35Z"></path>
+            <!-- Long tail -->
+            <path d="M15 35 C10 30 4 24 2 18 C0 12 4 10 8 14 C10 18 12 26 15 32"></path>
+            <path d="M15 35 C8 40 4 48 6 56 C8 62 14 62 16 56 C18 50 16 42 15 38"></path>
+            <!-- 4 legs -->
+            <path d="M40 50 C36 56 32 62 28 68 C26 70 24 70 24 66 C26 62 30 56 34 52"></path>
+            <path d="M28 68 C26 72 28 76 32 74"></path>
+            <path d="M60 52 C58 60 56 66 54 72 C52 74 50 74 50 70 C52 66 54 60 56 54"></path>
+            <path d="M54 72 C52 76 54 80 58 78"></path>
+            <!-- front legs -->
+            <path d="M45 22 C44 14 42 8 38 4 C36 2 34 4 36 8 C38 12 40 18 42 24"></path>
+            <path d="M65 18 C66 10 68 4 72 2 C74 0 76 2 74 6 C72 10 70 14 68 20"></path>
+            <!-- Eye -->
+            <circle cx="82" cy="26" r="3.5"></circle>
+            <circle cx="83" cy="26" r="1.4" fill="#525252"></circle>
+            <!-- scale pattern - stipple -->
+            <circle cx="50" cy="32" r="0.8" fill="#525252"></circle><circle cx="58" cy="30" r="0.8" fill="#525252"></circle>
+            <circle cx="66" cy="30" r="0.8" fill="#525252"></circle><circle cx="52" cy="40" r="0.8" fill="#525252"></circle>
+            <circle cx="60" cy="38" r="0.8" fill="#525252"></circle><circle cx="68" cy="38" r="0.8" fill="#525252"></circle>
+          </g>
+          <text x="487" y="160" font-family="Georgia,serif" font-style="italic" font-size="8.5" fill="#525252">4. Early Reptile</text>
+          <text x="482" y="170" font-family="Georgia,serif" font-size="7" fill="#7A7A7A">Reptilia · 310 mya</text>
+
+          <!-- Arrow -->
+          <path d="M568 100 L588 100" stroke="#2B4A7C" stroke-width="0.7"></path>
+          <path d="M583 97 L589 100 L583 103" stroke="#2B4A7C" stroke-width="0.7" fill="none"></path>
+
+          <!-- 5. EARLY MAMMAL — small shrew-like -->
+          <g transform="translate(598,75)" stroke-width="0.65">
+            <!-- Body - small rounded -->
+            <path d="M12 38 C14 24 28 14 46 14 C62 14 74 24 76 38 C78 52 66 62 50 64 C34 66 16 58 12 44 C10 40 10 40 12 38Z"></path>
+            <!-- Long pointed snout -->
+            <path d="M76 38 C84 32 92 28 96 30 C100 32 99 38 94 40 C88 42 80 42 76 40"></path>
+            <!-- tail -->
+            <path d="M12 38 C6 32 2 26 4 20 C6 16 10 18 10 24 C10 30 12 36 12 40"></path>
+            <!-- 4 legs - small -->
+            <path d="M30 52 C26 58 22 64 18 68 C16 70 14 69 16 66 C18 63 22 58 26 54"></path>
+            <path d="M50 56 C48 62 46 68 44 72 C42 74 40 73 42 70 C44 67 46 62 48 58"></path>
+            <path d="M32 24 C30 16 28 10 26 6 C24 4 22 5 24 8 C26 12 28 18 30 26"></path>
+            <path d="M52 22 C52 14 52 8 54 4 C56 2 58 3 57 6 C56 10 54 16 54 24"></path>
+            <!-- Eye -->
+            <circle cx="88" cy="34" r="3"></circle>
+            <circle cx="89" cy="34" r="1.2" fill="#525252"></circle>
+            <!-- Ear -->
+            <path d="M68 16 C66 8 68 2 72 2 C76 2 78 8 74 16"></path>
+            <!-- fur stipple -->
+            <circle cx="42" cy="32" r="0.6" fill="#525252"></circle><circle cx="50" cy="30" r="0.6" fill="#525252"></circle>
+            <circle cx="58" cy="30" r="0.6" fill="#525252"></circle><circle cx="44" cy="40" r="0.6" fill="#525252"></circle>
+            <circle cx="52" cy="40" r="0.6" fill="#525252"></circle><circle cx="60" cy="38" r="0.6" fill="#525252"></circle>
+            <circle cx="38" cy="46" r="0.5" fill="#525252"></circle><circle cx="48" cy="48" r="0.5" fill="#525252"></circle>
+          </g>
+          <text x="636" y="160" font-family="Georgia,serif" font-style="italic" font-size="8.5" fill="#525252">5. Early Mammal</text>
+          <text x="636" y="170" font-family="Georgia,serif" font-size="7" fill="#7A7A7A">Mammalia · 225 mya</text>
+
+          <!-- Arrow -->
+          <path d="M725 100 L745 100" stroke="#2B4A7C" stroke-width="0.7"></path>
+          <path d="M740 97 L746 100 L740 103" stroke="#2B4A7C" stroke-width="0.7" fill="none"></path>
+
+          <!-- 6. WHALE — Cetacea (our featured remedy) -->
+          <g transform="translate(755,78)" stroke-width="0.65">
+            <path d="M8 38 C14 22 38 12 70 12 C96 12 118 22 128 38 C136 50 130 64 112 70 C92 76 64 74 40 66 C20 60 6 52 8 38Z"></path>
+            <!-- tail flukes -->
+            <path d="M8 38 C2 28 -2 18 2 12 C6 8 12 10 12 18 C12 26 10 34 8 42"></path>
+            <path d="M8 38 C2 48 -2 58 2 64 C6 68 12 66 12 58 C12 50 10 42 8 40"></path>
+            <!-- flippers -->
+            <path d="M45 56 C36 62 28 70 26 78 C24 82 28 84 32 80 C38 74 44 66 46 60"></path>
+            <!-- dorsal fin -->
+            <path d="M72 12 C75 2 82 -4 86 -2 C88 0 87 6 84 12"></path>
+            <!-- eye -->
+            <circle cx="118" cy="28" r="4"></circle>
+            <circle cx="119" cy="28" r="1.8" fill="#525252"></circle>
+            <!-- baleen pattern -->
+            <path d="M115 42 L115 55" stroke-width="0.4"></path><path d="M119 42 L118 55" stroke-width="0.4"></path>
+            <path d="M123 40 L121 53" stroke-width="0.4"></path>
+            <!-- body highlights - stipple -->
+            <circle cx="75" cy="30" r="0.9" fill="#525252"></circle><circle cx="90" cy="28" r="0.9" fill="#525252"></circle>
+            <circle cx="80" cy="40" r="0.9" fill="#525252"></circle><circle cx="95" cy="38" r="0.9" fill="#525252"></circle>
+            <circle cx="70" cy="48" r="0.8" fill="#525252"></circle><circle cx="85" cy="50" r="0.8" fill="#525252"></circle>
+            <!-- blow hole -->
+            <path d="M105 14 C107 10 109 8 108 12" stroke-width="0.4"></path>
+          </g>
+          <text x="812" y="160" font-family="Georgia,serif" font-style="italic" font-size="8.5" fill="#525252">6. Cetacea</text>
+          <text x="806" y="170" font-family="Georgia,serif" font-size="7" fill="#7A7A7A">Blue Whale · 50 mya</text>
+
+          <!-- Arrow -->
+          <path d="M898 100 L918 100" stroke="#2B4A7C" stroke-width="0.7"></path>
+          <path d="M913 97 L919 100 L913 103" stroke="#2B4A7C" stroke-width="0.7" fill="none"></path>
+
+          <!-- 7. HOMO SAPIENS — simplified figure -->
+          <g transform="translate(928,45)" stroke-width="0.7">
+            <!-- Head -->
+            <circle cx="52" cy="18" r="14"></circle>
+            <!-- Neck + body -->
+            <path d="M48 32 L48 36 L40 38 L36 62 L44 62 L44 90 L48 90 L48 62 L56 62 L56 90 L60 90 L60 62 L68 62 L64 38 L56 36 L56 32"></path>
+            <!-- Arms -->
+            <path d="M40 38 L28 58 L24 72 C22 76 22 80 26 80 C28 80 30 78 30 74 L32 62 L36 48"></path>
+            <path d="M64 38 L76 58 L80 72 C82 76 82 80 78 80 C76 80 74 78 74 74 L72 62 L68 48"></path>
+            <!-- stipple for face -->
+            <circle cx="47" cy="16" r="1.5" fill="#525252"></circle>
+            <circle cx="57" cy="16" r="1.5" fill="#525252"></circle>
+            <path d="M47 24 C49 26 52 27 57 24" stroke-width="0.5"></path>
+            <!-- hair lines -->
+            <path d="M40 12 C42 6 48 2 52 2 C56 2 62 4 65 8" stroke-width="0.5"></path>
+          </g>
+          <text x="950" y="160" font-family="Georgia,serif" font-style="italic" font-size="8.5" fill="#525252">7. Homo Sapiens</text>
+          <text x="948" y="170" font-family="Georgia,serif" font-size="7" fill="#7A7A7A">Kingdom 7 · 300,000 y</text>
+
+          <!-- Plate border — specimen label style -->
+          <rect x="2" y="2" width="1096" height="190" stroke="#525252" stroke-width="0.5" fill="none" rx="2"></rect>
+          <rect x="6" y="6" width="1088" height="182" stroke="#2B4A7C" stroke-width="0.3" fill="none" rx="1"></rect>
+
+          <!-- Plate label at bottom left -->
+          <text x="12" y="188" font-family="Georgia,serif" font-style="italic" font-size="7.5" fill="#525252">Tab. I — Evolutionary Arc System · C. Regojo PDHom Adv</text>
+          <text x="950" y="188" font-family="Georgia,serif" font-size="7" fill="#7A7A7A">The Evolutionary Arc System, 2025</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
 <footer>
   <p>© 2025 Claudia Regojo &nbsp;·&nbsp; Tropical Homeopathy</p>
   <p style="font-style:italic;font-family:&#39;Lora&#39;,serif;">The Evolutionary Arc System — A Unified Framework</p>
@@ -592,17 +1132,17 @@ const codePanels = {
   class: {
     eyebrow:'Level 03 · The Code',
     title:'Class',
-    subtitle:'What do I aspire toward?',
+    subtitle:'What drives me?',
     body:`
-      <p>Class is the third digit and reveals the patient's hidden aspiration — what the soul reaches for, even when it cannot access it. It is often unconscious or expressed as its opposite (the person who longs to lead but lives as the outsider; the person who longs to be seen but hides).</p>
+      <p>Class is the third digit and reveals the patient's inner drive — the deep motivating force that shapes how they move through the world, often unconsciously or expressed as its opposite (the person driven to lead but living as the outsider; the person driven to be seen but hiding).</p>
       <p>Class describes the axis of the patient's life, not necessarily their presentation. The same Class position can manifest as expressed (fully accessible), suppressed (blocked or inverted), or straining (oscillating between poles).</p>
       <h4>Clinical question</h4>
-      <p><em>What do you really want that you haven't quite let yourself have yet?</em></p>
+      <p><em>What is the thing that drives you — beneath the roles, beneath what you're supposed to want?</em></p>
       <p>Follow-up: <em>When you imagine your career or life working really well — what specifically is happening? What are you doing, and how are others relating to you?</em></p>
       <p style="font-size:0.85rem;color:var(--mid);font-style:italic;">If the dream ends with recognition → Class 5. If it ends with impact and transformation → Class 6.</p>
-      <h4>The Seven Aspirations</h4>
+      <h4>The Seven Drives</h4>
       <table class="map-table">
-        <tr><th>#</th><th>Boundary state</th><th>Aspiration</th><th>Clinical marker</th></tr>
+        <tr><th>#</th><th>Boundary state</th><th>Drive</th><th>Clinical marker</th></tr>
         <tr><td>1</td><td>No boundaries</td><td>I long to merge</td><td>"I just want to exist without all this pressure"</td></tr>
         <tr><td>2</td><td>Within boundaries</td><td>I long to be held</td><td>"I want to feel safe and loved unconditionally"</td></tr>
         <tr><td>3</td><td>Finding boundaries</td><td>I long to belong</td><td>"I want to be truly part of something real"</td></tr>
@@ -957,7 +1497,7 @@ function openKingdomPanel(key) {
 // ── CASE PANELS ──
 const casePanels = {
   phosphorus: {
-    eyebrow:'Case 1 · Mineralia · EA Code 1-3-3-3-2-6-15',
+    eyebrow:'Case 1 · Mineralia · EA Code 1.3.3.3.2.6.15',
     title:'Bridging Radiance and Depletion',
     remedy:'Phosphorus 200C',
     body:`
@@ -999,7 +1539,7 @@ const casePanels = {
     `
   },
   carcinosinum: {
-    eyebrow:'Case 2 · Monera · EA Code 2-7-12',
+    eyebrow:'Case 2 · Homo Sapiens · EA Code 7.7.7.7.2.6.17',
     title:'The Mask of Perfection',
     remedy:'Carcinosinum 200C',
     body:`
@@ -1023,12 +1563,17 @@ const casePanels = {
         <tr><td>Calcarea carbonica</td><td>Dutifulness, overwhelm, chronic effort</td><td>Too sluggish and home-oriented; this patient is high-functioning, image-aware, and refined</td></tr>
         <tr><td><strong>Carcinosinum ✓</strong></td><td>Suppressed emotions, trauma, perfectionism, fear of not being enough</td><td>Selected — matches both physical presentation and emotional blueprint</td></tr>
       </table>
-      <h4>EA Code Analysis</h4>
+      <h4>EA Code Analysis — 7.7.7.7.2.6.17</h4>
+      <p style="font-size:0.9rem;color:var(--mid);margin-bottom:1rem;">Carcinosinum belongs to Kingdom 7 — Homo Sapiens — because the wound at its core is existential, not biological. This is not about invasion (Monera), reactive adaptation (Plantae), or group survival (Animalia). It is the distinctly human wound: <em>the suppression of the authentic self in order to earn love</em>. The Carcinosinum patient learned early that being herself was not acceptable. Perfectionism became the survival strategy — not for physical safety, but for belonging to the species. The body eventually speaks what the self cannot: rosacea, hormonal collapse, chronic fatigue. The question beneath all of it: <em>"Am I free to simply be who I am?"</em></p>
       <table class="map-table">
         <tr><th>Level</th><th>Code</th><th>Interpretation</th></tr>
-        <tr><td>Kingdom</td><td>2 – Monera</td><td>The sense of over-adaptation, loss of individuality, and need for symbiosis is central. A fragmented self formed in response to chronic emotional stress and environmental pressures</td></tr>
-        <tr><td>Series</td><td>7 – Responsibility</td><td>She carries the burden of moral and emotional responsibility — seeks to do the right thing, often at the cost of self. Her perfectionism is ethical, not egotistical</td></tr>
-        <tr><td>Stage</td><td>12 – Collapse under weight of duty</td><td>Exhausted, burnt out, developing chronic illness due to internalized suppression of needs and emotions. The IUD placement triggered a systemic unraveling — a tipping point in this long arc</td></tr>
+        <tr><td>Kingdom</td><td>7 – Homo Sapiens</td><td>Existential wound: the authentic self was suppressed to earn love. Core question — "Am I free to be who I truly am?" — not a survival question but a question of selfhood</td></tr>
+        <tr><td>Phylum</td><td>7 – Learning to let go</td><td>Life task: releasing the false self, the perfectionist performance, the belief that love must be earned through self-erasure. She has not yet completed this task</td></tr>
+        <tr><td>Class</td><td>7 – I long to be free</td><td>The deep aspiration is freedom — from the mask, from duty, from the exhausting performance of being perfect. She longs to drop all of it and simply exist</td></tr>
+        <tr><td>Order</td><td>7 – I withdraw</td><td>Under pressure, she disconnects from feeling, suppresses emotion, retreats behind competence and a calm exterior. The IUD triggered what suppression had been holding back</td></tr>
+        <tr><td>Family</td><td>2 – The one who is held</td><td>Beneath the performance is a profound longing to be held and loved without conditions — the role she cannot permit herself to occupy because it would require her to stop performing</td></tr>
+        <tr><td>Genus</td><td>6 – Overburdened</td><td>She has carried the weight of this performance for so long she is exhausted by it — done with the role, but unable to stop. The weight is both felt and hidden</td></tr>
+        <tr><td>Species</td><td>17 – The point of collapse</td><td>Stage 17: the system is spent. Chronic suppression has reached its physiological limit. The body now speaks what the self cannot: rosacea, hormonal disruption, fatigue, emotional shutdown</td></tr>
       </table>
       <h4>Physical Confirmations</h4>
       <ul>
@@ -1043,7 +1588,7 @@ const casePanels = {
     `
   },
   malaria: {
-    eyebrow:'Case 3 · Protista · EA Code 3-…',
+    eyebrow:'Case 3 · Protista · EA Code 3.5.7.7.7.7.12',
     title:'Trapped in a Loop',
     remedy:'Malaria officinalis 200C',
     body:`
@@ -1094,7 +1639,7 @@ const casePanels = {
     `
   },
   arnica: {
-    eyebrow:'Case 4 · Plantae · EA Code 5-7-5-6-4-4-08',
+    eyebrow:'Case 4 · Plantae · EA Code 5.7.2.5.4.4.08',
     title:'A Web of Old Wounds',
     remedy:'Arnica montana 1M',
     body:`
@@ -1113,8 +1658,8 @@ const casePanels = {
         <tr><th>Level</th><th>Code</th><th>Interpretation</th></tr>
         <tr><td>Kingdom</td><td>5 – Plantae</td><td>The patient is having systemic reactions to her environment. Her lens is reactive: me vs. the environment</td></tr>
         <tr><td>Phylum</td><td>7 – Core Eudicots</td><td>The client has a life task of leadership and creative integration</td></tr>
-        <tr><td>Class</td><td>5 – Asterids</td><td>Performative, expressive, desire to be seen in role</td></tr>
-        <tr><td>Order</td><td>6 – Asterales</td><td>Containment strategy: carries burdens, suppresses</td></tr>
+        <tr><td>Class</td><td>2 – Monocots</td><td>Grounded, reactive, and rhythmically sensitive — the body speaks through cyclical inflammation and systemic immune response</td></tr>
+        <tr><td>Order</td><td>5 – Asterales-adjacent</td><td>Containment strategy: carries burdens, suppresses reactivity until a tipping point — then full inflammatory release</td></tr>
         <tr><td>Family</td><td>4 – Asteraceae (Compositae)</td><td>Known for capacity to address trauma, inflammation, and reactive immune conditions linked to wounds and toxin effects</td></tr>
         <tr><td>Genus</td><td>4 – Arnica</td><td>Specific adaptation style: resilience, pushing through, not wanting to be touched</td></tr>
         <tr><td>Species</td><td>08 – montana</td><td>Stage 8: overextension, high output, beginning to strain</td></tr>
@@ -1134,7 +1679,7 @@ const casePanels = {
     `
   },
   lac: {
-    eyebrow:'Case 5 · Animalia · EA Code 6-773.26.12',
+    eyebrow:'Case 5 · Animalia · EA Code 6.7.6.4.4.2.01',
     title:'Starved for Love',
     remedy:'Lac caninum 1M',
     body:`
@@ -1158,10 +1703,10 @@ const casePanels = {
         <tr><td>Kingdom</td><td>6 – Animalia</td><td>Me vs. others; survival through relationship. Primary issue is self-actualisation — trust, betrayal, and group loyalty</td></tr>
         <tr><td>Phylum</td><td>7 – Chordata</td><td>Looking for spiritual transcendence; energy healer, practices akashic record reading and daily meditation</td></tr>
         <tr><td>Class</td><td>7 – Mammalia</td><td>Maternal care, nourishment, abandonment, and sexual intimacy confirmed at this level</td></tr>
-        <tr><td>Order</td><td>3 – Laurasiatherian</td><td>Affiliation — the key conflict: inner tension between dominance and submission, guilt about instincts, pack belonging vs. independence</td></tr>
-        <tr><td>Family</td><td>2 – Ferae</td><td>"The Dependent" — shame, loyalty, betrayal, protection, alternating dominance and submission; years of codependence</td></tr>
-        <tr><td>Genus</td><td>6 – Felines/Canines</td><td>Outsider by choice; feels overburdened; opportunistic behavior</td></tr>
-        <tr><td>Species</td><td>12 – Lac caninum</td><td>Shame, worthlessness, betrayal by mother, duality of self, alternating mental/emotional states</td></tr>
+        <tr><td>Order</td><td>4 – Laurasiatheria</td><td>Affiliation — tension between dominance and submission, guilt about instincts, pack belonging vs. personal freedom</td></tr>
+        <tr><td>Family</td><td>4 – Carnivora</td><td>Predator / prey dynamics turned inward — appetite, hunger, shame around instinct. Food as substitute for love is a Carnivora-level conflict</td></tr>
+        <tr><td>Genus</td><td>2 – Canidae (Dogs)</td><td>Loyalty, pack belonging, abandonment, unconditional love withheld — the domestic dog's existential wound: devotion unreturned</td></tr>
+        <tr><td>Species</td><td>01 – Lac caninum</td><td>Stage 1: the newest, most derived — the fully domesticated animal. Shame, worthlessness, betrayal by the mother figure, duality of self, alternating mental and emotional states</td></tr>
       </table>
       <h4>Why Not Crocuta crocuta (Hyena)?</h4>
       <p>The theoretical code pointed initially toward Hyena — which would suit a more dominant, aggressive, matriarchal picture. However, this remedy does not yet exist in practice. The comparison reveals the diagnostic depth of the EA system:</p>
