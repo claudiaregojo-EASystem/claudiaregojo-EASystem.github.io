@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<!-- saved from url=(0067)file:///C:/Users/cvr19/Downloads/evolutionary-arc-system%20(1).html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Evolutionary Arc System</title>
+<link href="./index_files/css2" rel="stylesheet">
+<style>
+:root {
+  --ink: #2A2D3E;
+  --parchment: #EDE8DC;
+  --warm-white: #F5F0E8;
+  --gold: #D4605A;
+  --gold-light: #E88888;
+  --sage: #5E7A58;
+  --rust: #D4605A;
+  --mid: #6A6478;
+  --dark-section: #1E2232;
+  --card: #FDFAF5;
+  --line: rgba(212,96,90,0.22);
+  --sage-line: rgba(94,122,88,0.25);
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  background:var(--warm-white);
+  color:var(--ink);
+  font-family:'Lora',serif;
+  font-size:17px;
+  line-height:1.7;
+  overflow-x:hidden;
+}
+
+/* NAV */
+nav {
+  position:fixed; top:0; left:0; right:0; z-index:200;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:1.1rem 4rem;
+  background:rgba(245,240,232,0.97);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid rgba(212,96,90,0.2);
+}
+.nav-logo {
+  font-family:'Lora',serif; font-weight:500; font-size:0.82rem;
+  letter-spacing:0.18em; text-transform:uppercase; color:var(--ink); text-decoration:none;
+}
+.nav-links { display:flex; gap:2.5rem; list-style:none; }
+.nav-links a {
+  font-family:'Lora',serif; font-weight:300; font-size:0.78rem;
+  letter-spacing:0.1em; text-transform:uppercase; color:var(--mid);
+  text-decoration:none; transition:color 0.3s;
+}
+.nav-links a:hover { color:var(--gold); }
+
+/* HERO */
+.hero {
+  min-height:100vh; display:grid; grid-template-columns:1fr 1fr; position:relative;
+}
+.hero-left {
+  background:var(--dark-section); display:flex; flex-direction:column;
+  justify-content:center; padding:8rem 5rem 5rem 6rem; position:relative;
+}
+.hero-left::after {
+  content:''; position:absolute; right:0; top:15%; bottom:15%;
+  width:1px; background:var(--gold); opacity:0.3;
+}
+.hero-right {
+  background:var(--warm-white); display:flex; flex-direction:column;
+  justify-content:center; padding:8rem 5rem 5rem 5rem;
+}
+.hero-eyebrow {
+  font-family:'Lora',serif; font-weight:300; font-size:0.72rem;
+  letter-spacing:0.28em; text-transform:uppercase; color:var(--gold-light);
+  margin-bottom:1.6rem; opacity:0; animation:fadeUp 0.8s 0.2s forwards; font-family:'Lora',serif; font-style:italic; letter-spacing:0.15em; font-size:0.8rem;
+}
+.hero-title {
+  font-family:'Playfair Display',serif; font-size:clamp(2.6rem,4vw,4.2rem);
+  font-weight:400; line-height:1.12; color:#faf6ee;
+  margin-bottom:1.4rem; opacity:0; animation:fadeUp 0.8s 0.4s forwards;
+}
+.hero-title em { font-style:italic; color:#E88888; }
+.hero-subtitle {
+  font-size:1rem; color:var(--mid); font-style:italic;
+  max-width:340px; opacity:0; animation:fadeUp 0.8s 0.6s forwards; font-family:'Lora',serif; font-style:italic;
+}
+.hero-author {
+  margin-top:3rem; font-size:0.72rem; font-weight:300; letter-spacing:0.18em;
+  text-transform:uppercase; color:rgba(212,96,90,0.65);
+  opacity:0; animation:fadeUp 0.8s 0.8s forwards;
+}
+.hero-description {
+  font-family:'Lora',serif; font-size:1.05rem; line-height:1.8;
+  color:var(--ink); opacity:0; animation:fadeUp 0.8s 0.5s forwards; max-width:440px;
+}
+.hero-code-preview {
+  margin-top:2.5rem; display:flex; gap:0.4rem; align-items:center;
+  opacity:0; animation:fadeUp 0.8s 0.7s forwards;
+}
+.code-digit {
+  width:40px; height:40px; border:1px solid var(--gold);
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Lora',serif; font-size:0.75rem; font-weight:500;
+  letter-spacing:0.05em; color:var(--gold);
+  transition:background 0.25s,color 0.25s,transform 0.2s;
+  cursor:pointer; position:relative;
+}
+.code-digit:hover { background:var(--gold); color:var(--ink); transform:translateY(-3px); }
+.code-separator { color:var(--gold); opacity:0.5; font-size:0.9rem; }
+.hero-cta {
+  margin-top:2.5rem; display:inline-block; font-size:0.75rem; font-weight:500;
+  letter-spacing:0.18em; text-transform:uppercase; color:var(--ink);
+  text-decoration:none; border-bottom:2px solid var(--gold); padding-bottom:4px;
+  transition:color 0.3s,border-color 0.3s; opacity:0; animation:fadeUp 0.8s 0.9s forwards;
+  font-family:'Lora',serif;
+}
+.hero-cta:hover { color:var(--gold); border-bottom-color:var(--gold-light); }
+
+/* SHARED */
+section { padding:7rem 0; }
+.container { max-width:1160px; margin:0 auto; padding:0 4rem; }
+.section-label {
+  font-family:'Lora',serif; font-size:0.7rem; font-weight:500;
+  letter-spacing:0.28em; text-transform:uppercase; color:var(--gold);
+  margin-bottom:0.8rem; display:block; opacity:0.9;
+}
+.section-title {
+  font-family:'Playfair Display',serif; font-size:clamp(1.9rem,2.5vw,2.8rem);
+  font-weight:400; line-height:1.2; margin-bottom:1.5rem; color:var(--ink);
+}
+.section-body { font-size:1rem; color:var(--mid); max-width:640px; line-height:1.9; font-family:'Lora',serif; }
+.gold-divider { width:56px; height:2px; background:var(--gold); margin:2rem 0; opacity:0.8; }
+
+/* ABOUT */
+.about { background:var(--warm-white); }
+.about-grid { display:grid; grid-template-columns:1fr 1.1fr; gap:6rem; align-items:start; }
+.about-quote {
+  border-left:3px solid var(--sage); color:var(--ink); font-family:'Playfair Display',serif; padding-left:1.5rem; margin-top:2.5rem;
+  font-family:'Playfair Display',serif; font-style:italic; font-size:1.1rem;
+  color:var(--ink); line-height:1.7;
+}
+.about-stats { display:grid; grid-template-columns:1fr 1fr; gap:2rem; margin-top:2rem; }
+.stat { border-top:1px solid rgba(212,96,90,0.2); padding-top:1rem; }
+.stat-number {
+  font-family:'Playfair Display',serif; font-size:2.4rem; font-weight:400;
+  color:var(--gold); line-height:1;
+}
+.stat-label {
+  font-size:0.7rem; font-weight:300; letter-spacing:0.12em;
+  text-transform:uppercase; color:var(--mid); margin-top:0.4rem;
+}
+
+/* CODE SECTION */
+.code-section { background:var(--dark-section); color:var(--warm-white); }
+.code-section .section-title { color:#EDE8DC; }
+.code-section .section-body { color:rgba(237,232,220,0.65); }
+.code-levels {
+  margin-top:3.5rem; display:grid; grid-template-columns:repeat(7,1fr);
+  gap:1px; background:rgba(212,96,90,0.15); border:1px solid rgba(212,96,90,0.2);
+}
+.code-level {
+  background:var(--ink); padding:1.8rem 1.2rem;
+  transition:background 0.25s,transform 0.2s; cursor:pointer; position:relative;
+}
+.code-level:hover { background:rgba(184,175,175,0.14); transform:translateY(-2px); }
+.code-level-num {
+  font-size:0.62rem; font-weight:300; letter-spacing:0.2em;
+  color:var(--gold); opacity:1; margin-bottom:0.6rem;
+}
+.code-level-name {
+  font-family:'Playfair Display',serif; font-size:1.1rem;
+  color:#EDE8DC; margin-bottom:0.4rem;
+}
+.code-level-dim {
+  font-size:0.65rem; font-weight:500; letter-spacing:0.12em;
+  text-transform:uppercase; color:var(--gold); margin-bottom:0.8rem;
+}
+.code-level-desc { font-size:0.8rem; color:rgba(237,232,220,0.82); line-height:1.6; }
+.click-hint {
+  font-size:0.6rem; font-weight:300; letter-spacing:0.1em; text-transform:uppercase;
+  color:rgba(212,96,90,0.5); margin-top:0.8rem;
+}
+
+/* KINGDOMS */
+.kingdoms { background:var(--parchment); }
+.kingdoms-grid {
+  display:grid; grid-template-columns:repeat(7,1fr); gap:1.5rem; margin-top:3.5rem;
+}
+.kingdom-card {
+  border-top:3px solid transparent; padding:1.6rem 1rem;
+  background:var(--card); transition:border-color 0.3s,transform 0.25s,box-shadow 0.3s; color:var(--ink);
+  cursor:pointer;
+}
+.kingdom-card:hover { border-top-color:var(--gold); background:rgba(212,96,90,0.1); transform:translateY(-5px); box-shadow:0 14px 36px rgba(26,22,16,0.09); }
+.kingdom-num { font-size:0.62rem; font-weight:300; letter-spacing:0.18em; color:var(--gold); margin-bottom:0.4rem; }
+.kingdom-name { font-family:'Playfair Display',serif; font-size:1.05rem; margin-bottom:0.3rem; color:var(--ink); }
+.kingdom-question { font-style:italic; font-size:0.85rem; color:var(--sage); opacity:0.9; margin-bottom:0.8rem; line-height:1.5; }
+.kingdom-stage { font-size:0.62rem; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); opacity:0.7; }
+
+/* HOW */
+.how { background:var(--warm-white); }
+.steps { display:grid; grid-template-columns:repeat(5,1fr); gap:0; margin-top:4rem; position:relative; }
+.steps::before { content:''; position:absolute; top:1.1rem; left:5%; right:5%; height:1px; background:rgba(212,96,90,0.2); }
+.step { padding:0 1.5rem; position:relative; z-index:1; text-align:center; }
+.step-dot {
+  width:2.2rem; height:2.2rem; border:1px solid var(--gold); border-radius:50%;
+  background:var(--card); display:flex; align-items:center; justify-content:center;
+  margin:0 auto 1.5rem; font-size:0.65rem; font-weight:500; color:var(--gold); letter-spacing:0.05em;
+}
+.step-title { font-family:'Playfair Display',serif; font-size:0.95rem; margin-bottom:0.5rem; }
+.step-desc { font-size:0.82rem; color:var(--mid); line-height:1.6; }
+
+/* CASES */
+.cases { background:var(--parchment); }
+.cases-intro { display:grid; grid-template-columns:1fr 1.4fr; gap:5rem; align-items:start; margin-bottom:4rem; }
+.case-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; }
+.case-cards .case-card:nth-child(4),
+.case-cards .case-card:nth-child(5) { grid-column: span 1; }
+@media(min-width:901px){
+  .case-cards { grid-template-columns:repeat(3,1fr); }
+  .case-cards .case-card:last-child:nth-child(3n+2) { grid-column: 2; }
+}
+.case-card {
+  background:var(--card); padding:2rem; color:var(--ink);
+  border-bottom:2px solid transparent; transition:border-color 0.3s,transform 0.25s;
+  cursor:pointer;
+}
+.case-card:hover { border-bottom-color:var(--gold); transform:translateY(-3px); background:rgba(212,96,90,0.06); }
+.case-code { font-size:0.68rem; font-weight:500; letter-spacing:0.1em; color:var(--gold); margin-bottom:0.8rem; opacity:0.9; }
+.case-title { font-family:'Playfair Display',serif; font-size:1.1rem; margin-bottom:0.5rem; line-height:1.3; }
+.case-remedy { font-size:0.65rem; font-weight:500; letter-spacing:0.13em; text-transform:uppercase; color:var(--rust); margin-bottom:1rem; }
+.case-desc { font-size:0.88rem; color:var(--mid); line-height:1.7; }
+
+/* FOUNDER */
+.founders { background:var(--dark-section); color:var(--warm-white); }
+.founders-inner { display:grid; grid-template-columns:0.7fr 1.3fr; gap:6rem; align-items:center; }
+.founders-name-block { border-left:2px solid var(--gold); padding-left:2rem; }
+.founders-name { font-family:'Playfair Display',serif; font-size:2rem; color:var(--warm-white); line-height:1.2; margin-bottom:0.5rem; }
+.founders-title { font-size:0.68rem; font-weight:300; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); }
+.founders-quote { font-family:'Playfair Display',serif; font-size:1.2rem; font-style:italic; line-height:1.75; color:rgba(237,232,220,0.88); }
+.founders-quote::before { content:'\201C'; font-size:3.5rem; color:var(--gold); opacity:0.5; display:block; line-height:0.8; margin-bottom:0.8rem; }
+
+/* FOOTER */
+footer {
+  background:var(--dark-section); border-top:1px solid rgba(212,96,90,0.15);
+  padding:2.5rem 4rem; display:flex; align-items:center; justify-content:space-between;
+}
+footer p { font-size:0.68rem; font-weight:300; letter-spacing:0.15em; text-transform:uppercase; color:rgba(237,232,220,0.35); }
+
+/* ── MODAL / PANEL ── */
+.overlay {
+  display:none; position:fixed; inset:0; z-index:500;
+  background:rgba(42,45,62,0.7); backdrop-filter:blur(6px);
+  opacity:0; transition:opacity 0.3s;
+}
+.overlay.open { display:flex; align-items:flex-start; justify-content:flex-end; }
+.overlay.visible { opacity:1; }
+.panel {
+  width:min(680px,95vw); height:100vh; overflow-y:auto;
+  background:var(--warm-white); padding:4rem 3.5rem;
+  transform:translateX(100%); transition:transform 0.4s cubic-bezier(0.4,0,0.2,1);
+  position:relative;
+}
+.overlay.visible .panel { transform:translateX(0); }
+.panel-close {
+  position:absolute; top:1.8rem; right:2rem;
+  background:none; border:none; cursor:pointer; color:var(--mid); font-size:1.4rem;
+  font-size:1.4rem; line-height:1; transition:color 0.2s;
+}
+.panel-close:hover { color:var(--gold); }
+.panel-close { color:var(--mid); }
+.panel-eyebrow {
+  font-size:0.68rem; font-weight:500; letter-spacing:0.25em;
+  text-transform:uppercase; color:var(--gold); margin-bottom:0.8rem; opacity:0.9;
+}
+.panel-title {
+  font-family:'Playfair Display',serif; font-size:2.4rem; line-height:1.15;
+  margin-bottom:0.5rem; color:var(--ink);
+}
+.panel-subtitle { font-style:italic; color:var(--mid); font-size:1.05rem; margin-bottom:2rem; }
+.panel-divider { width:48px; height:2px; background:var(--gold); margin:1.5rem 0; opacity:0.8; }
+.panel-body { font-size:0.96rem; line-height:1.85; color:var(--ink); }
+.panel-body p { margin-bottom:1.1rem; color:var(--mid); }
+.panel-body h4 {
+  font-family:'Playfair Display',serif; font-size:1.1rem;
+  margin:1.8rem 0 0.6rem; color:var(--ink);
+}
+.panel-body ul { padding-left:1.2rem; margin-bottom:1.1rem; }
+.panel-body li { margin-bottom:0.4rem; font-size:0.93rem; color:var(--mid); line-height:1.6; }
+.panel-body strong { color:var(--ink); font-weight:600; }
+.panel-tag {
+  display:inline-block; background:rgba(212,96,90,0.08);
+  border:1px solid rgba(212,96,90,0.25); padding:0.3rem 0.9rem;
+  font-size:0.72rem; font-weight:500; letter-spacing:0.1em;
+  font-style:italic; font-family:'Lora',serif;
+  color:var(--ink); margin:0.3rem 0.2rem 0.3rem 0;
+  border-radius:2px;
+}
+.map-table {
+  width:100%; border-collapse:collapse; margin-top:1.5rem; font-size:0.85rem;
+}
+.map-table th {
+  background:#141820; color:var(--gold-light);
+  font-size:0.65rem; font-weight:500; letter-spacing:0.15em; text-transform:uppercase;
+  padding:0.7rem 0.8rem; text-align:left; border:none;
+}
+.map-table td {
+  padding:0.65rem 0.8rem; border-bottom:1px solid rgba(212,96,90,0.2);
+  vertical-align:top; line-height:1.5;
+}
+.map-table tr:last-child td { border-bottom:none; }
+.map-table tr:hover td { background:rgba(212,96,90,0.08); }
+
+/* ANIMATIONS */
+/* SCROLLBAR */
+::-webkit-scrollbar { width:6px; }
+::-webkit-scrollbar-track { background:var(--parchment); }
+::-webkit-scrollbar-thumb { background:rgba(212,96,90,0.35); border-radius:3px; }
+
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(18px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+.reveal { opacity:0; transform:translateY(20px); transition:opacity 0.7s ease,transform 0.7s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+
+/* MOBILE */
+@media(max-width:900px){
+  nav { padding:1rem 1.5rem; }
+  .nav-links { display:none; }
+  .hero { grid-template-columns:1fr; min-height:auto; }
+  .hero-left { padding:7rem 2rem 3rem; }
+  .hero-right { padding:3rem 2rem 5rem; }
+  .hero-left::after { display:none; }
+  .about-grid,.founders-inner,.cases-intro { grid-template-columns:1fr; gap:2.5rem; }
+  .code-levels,.kingdoms-grid { grid-template-columns:repeat(2,1fr); }
+  .case-cards,.steps { grid-template-columns:1fr; }
+  .steps::before { display:none; }
+  .container { padding:0 1.5rem; }
+  section { padding:4rem 0; }
+  footer { flex-direction:column; gap:0.5rem; text-align:center; }
+  .panel { padding:3rem 1.8rem; }
+}
+
+
+
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="file:///C:/Users/cvr19/Downloads/evolutionary-arc-system%20(1).html#">The Evolutionary Arc System</a>
+  <ul class="nav-links">
+    <li><a href="file:///C:/Users/cvr19/Downloads/evolutionary-arc-system%20(1).html#about">The System</a></li>
+    <li><a href="file:///C:/Users/cvr19/Downloads/evolutionary-arc-system%20(1).html#code">The Code</a></li>
+    <li><a href="file:///C:/Users/cvr19/Downloads/evolutionary-arc-system%20(1).html#kingdoms">Kingdoms</a></li>
+    <li><a href="file:///C:/Users/cvr19/Downloads/evolutionary-arc-system%20(1).html#cases">Cases</a></li>
+    <li><a href="file:///C:/Users/cvr19/Downloads/evolutionary-arc-system%20(1).html#founder">About</a></li>
+
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <span class="hero-eyebrow">◆ &nbsp; A Unified Framework for Homeopathic Practice &nbsp; ◆</span>
+    <h1 class="hero-title">The <em>Evolutionary</em><br>Arc System</h1>
+    <p class="hero-subtitle">A seven-level code that maps every remedy to its place in the unfolding of consciousness.</p>
+    <div class="hero-code-preview">
+      <div class="code-digit" onclick="openCodePanel(&#39;kingdom&#39;)" title="Kingdom — click to learn more">K</div>
+      <div class="code-digit" onclick="openCodePanel(&#39;phylum&#39;)" title="Phylum — click to learn more">P</div>
+      <div class="code-digit" onclick="openCodePanel(&#39;class&#39;)" title="Class — click to learn more">C</div>
+      <div class="code-digit" onclick="openCodePanel(&#39;order&#39;)" title="Order — click to learn more">O</div>
+      <span class="code-separator">·</span>
+      <div class="code-digit" onclick="openCodePanel(&#39;family&#39;)" title="Family — click to learn more">F</div>
+      <div class="code-digit" onclick="openCodePanel(&#39;genus&#39;)" title="Genus — click to learn more">G</div>
+      <span class="code-separator">·</span>
+      <div class="code-digit" onclick="openCodePanel(&#39;species&#39;)" title="Species — click to learn more">S</div>
+    </div>
+    <span class="hero-author">Claudia Regojo · 7 Years in Development</span>
+  </div>
+  <div class="hero-right" style="border-left:none; position:relative;">
+    <p class="hero-description">Homeopathy has long needed a single grammar through which Scholten, Sankaran, Yakir, and Joshi could speak together. The Evolutionary Arc System is that grammar — a unified map of remedies across all kingdoms, grounded in evolutionary biology and the unfolding of human consciousness.</p>
+    <div class="gold-divider"></div>
+    <p class="hero-description" style="font-style:italic;color:var(--mid);font-size:0.97rem;">Designed for practicing homeopaths who want to move from intuition to precision — without losing depth.</p>
+    <a class="hero-cta" href="file:///C:/Users/cvr19/Downloads/evolutionary-arc-system%20(1).html#about">Explore the System →</a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="reveal">
+        <span class="section-label">The Foundation</span>
+        <h2 class="section-title">One code.<br>Every kingdom.</h2>
+        <div class="gold-divider"></div>
+        <p class="section-body">The EA is a theoretical framework — a working hypothesis, not an established doctrine. Similar to how the Periodic Table organises elements by atomic structure, the EA organises homeopathic remedies by their position in the evolutionary hierarchy.</p>
+        <blockquote class="about-quote">Every remedy represents an adaptive strategy shaped by evolutionary constraints. When we find the organism whose strategy mirrors the patient's own, we have found the simillimum.</blockquote>
+      </div>
+      <div class="reveal" style="transition-delay:0.2s;">
+        <p class="section-body">The EA extends homeopathy's existing frameworks — Scholten, Sankaran, Yakir — into a single unified grammar. It is grounded in evolutionary biology and the Joshi boundary arc, giving practitioners a map that works across all kingdoms and all schools.</p>
+        <div class="about-stats">
+          <div class="stat"><div class="stat-number">7</div><div class="stat-label">Kingdoms of consciousness</div></div>
+          <div class="stat"><div class="stat-number">7</div><div class="stat-label">Levels of the code</div></div>
+          <div class="stat"><div class="stat-number">18</div><div class="stat-label">Stages of the arc</div></div>
+          <div class="stat"><div class="stat-number">7+</div><div class="stat-label">Years in development</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE CODE -->
+<section class="code-section" id="code">
+  <div class="container">
+    <span class="section-label">The Framework</span>
+    <h2 class="section-title reveal">The 7-Level Code</h2>
+    <p class="section-body reveal" style="transition-delay:0.15s;">Like DNA encodes form, the EA Code encodes the homeopathic identity of a remedy. Click any level to explore its meaning, tables, and clinical application.</p>
+    <div class="code-levels reveal" style="transition-delay:0.3s;">
+      <div class="code-level" onclick="openCodePanel(&#39;kingdom&#39;)"><div class="code-level-num">Level 01</div><div class="code-level-name">Kingdom</div><div class="code-level-dim">Perception</div><div class="code-level-desc">Fundamental mode of being — the existential lens through which life is experienced</div><div class="click-hint">↑ click to explore</div></div>
+      <div class="code-level" onclick="openCodePanel(&#39;phylum&#39;)"><div class="code-level-num">Level 02</div><div class="code-level-name">Phylum</div><div class="code-level-dim">Life Task</div><div class="code-level-desc">What am I here to learn? The developmental challenge that keeps returning</div><div class="click-hint">↑ click to explore</div></div>
+      <div class="code-level" onclick="openCodePanel(&#39;class&#39;)"><div class="code-level-num">Level 03</div><div class="code-level-name">Class</div><div class="code-level-dim">Drive</div><div class="code-level-desc">What do I aspire toward? The hidden longing the soul reaches for</div><div class="click-hint">↑ click to explore</div></div>
+      <div class="code-level" onclick="openCodePanel(&#39;order&#39;)"><div class="code-level-num">Level 04</div><div class="code-level-name">Order</div><div class="code-level-dim">Strategy</div><div class="code-level-desc">How do I survive? The instinctive strategy under pressure</div><div class="click-hint">↑ click to explore</div></div>
+      <div class="code-level" onclick="openCodePanel(&#39;family&#39;)"><div class="code-level-num">Level 05</div><div class="code-level-name">Family</div><div class="code-level-dim">Group Role</div><div class="code-level-desc">Who am I in the group? The constitutional role across all groups</div><div class="click-hint">↑ click to explore</div></div>
+      <div class="code-level" onclick="openCodePanel(&#39;genus&#39;)"><div class="code-level-num">Level 06</div><div class="code-level-name">Genus</div><div class="code-level-dim">Inner Experience</div><div class="code-level-desc">How do I feel about that role? Whether it is embraced, resented, or abandoned</div><div class="click-hint">↑ click to explore</div></div>
+      <div class="code-level" onclick="openCodePanel(&#39;species&#39;)"><div class="code-level-num">Level 07</div><div class="code-level-name">Species</div><div class="code-level-dim">Stage 1–18</div><div class="code-level-desc">How far have I come? Position on the arc from emergence to completion</div><div class="click-hint">↑ click to explore</div></div>
+    </div>
+    <div style="margin-top:3rem;" class="reveal">
+      <p style="font-size:0.72rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:rgba(237,232,220,0.5);">Example Code — Lac caninum</p>
+      <p style="margin-top:0.8rem;font-family:&#39;Playfair Display&#39;,serif;font-size:1.4rem;color:var(--gold-light);letter-spacing:0.08em;">6 · 7 · 6 · 4 · 4 · 2 · 01</p>
+      <p style="margin-top:0.4rem;font-size:0.85rem;color:rgba(237,232,220,0.45);font-style:italic;">Animalia · Chordata · I long to lead · I take control &nbsp;·&nbsp; I am the responsible one · I am uncertain &nbsp;·&nbsp; Stage 1</p>
+    </div>
+  </div>
+</section>
+
+<!-- KINGDOMS -->
+<section class="kingdoms" id="kingdoms">
+  <div class="container">
+    <span class="section-label">Level One</span>
+    <h2 class="section-title reveal">The Seven Kingdoms</h2>
+    <p class="section-body reveal" style="transition-delay:0.15s;">Each kingdom answers a fundamental existential question and corresponds to a phase in the evolution of consciousness. Click any kingdom to explore its full map.</p>
+    <div class="kingdoms-grid reveal" style="transition-delay:0.3s;">
+      <div class="kingdom-card" onclick="openKingdomPanel(&#39;mineralia&#39;)"><div class="kingdom-num">Kingdom 1</div><div class="kingdom-name">Mineralia</div><div class="kingdom-question">"Am I enough?"</div><div class="kingdom-stage">Birth — Infancy</div></div>
+      <div class="kingdom-card" onclick="openKingdomPanel(&#39;monera&#39;)"><div class="kingdom-num">Kingdom 2</div><div class="kingdom-name">Monera</div><div class="kingdom-question">"Am I safe?"</div><div class="kingdom-stage">Early Childhood</div></div>
+      <div class="kingdom-card" onclick="openKingdomPanel(&#39;protista&#39;)"><div class="kingdom-num">Kingdom 3</div><div class="kingdom-name">Protista</div><div class="kingdom-question">"Am I accepted?"</div><div class="kingdom-stage">Adolescence</div></div>
+      <div class="kingdom-card" onclick="openKingdomPanel(&#39;fungi&#39;)"><div class="kingdom-num">Kingdom 4</div><div class="kingdom-name">Fungi</div><div class="kingdom-question">"Am I capable?"</div><div class="kingdom-stage">Young Adulthood</div></div>
+      <div class="kingdom-card" onclick="openKingdomPanel(&#39;plantae&#39;)"><div class="kingdom-num">Kingdom 5</div><div class="kingdom-name">Plantae</div><div class="kingdom-question">"Am I admired?"</div><div class="kingdom-stage">Maturity</div></div>
+      <div class="kingdom-card" onclick="openKingdomPanel(&#39;animalia&#39;)"><div class="kingdom-num">Kingdom 6</div><div class="kingdom-name">Animalia</div><div class="kingdom-question">"Am I respected?"</div><div class="kingdom-stage">Later Adulthood</div></div>
+      <div class="kingdom-card" onclick="openKingdomPanel(&#39;homo&#39;)"><div class="kingdom-num">Kingdom 7</div><div class="kingdom-name">Homo Sapiens</div><div class="kingdom-question">"Am I free?"</div><div class="kingdom-stage">Transcendence</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW -->
+<section class="how" id="how">
+  <div class="container">
+    <span class="section-label">Clinical Application</span>
+    <h2 class="section-title reveal">How to Read a Case</h2>
+    <p class="section-body reveal" style="transition-delay:0.15s;">Five structured steps move a patient's story into a precise evolutionary code.</p>
+    <div class="steps">
+      <div class="step reveal" style="transition-delay:0.1s;"><div class="step-dot">01</div><div class="step-title">Listen</div><div class="step-desc">Take the case without interruption. Record verbatim language, gestures, and recurring dreams.</div></div>
+      <div class="step reveal" style="transition-delay:0.2s;"><div class="step-dot">02</div><div class="step-title">Tag</div><div class="step-desc">Assign each expression to a code level — Kingdom through Species — using the reference tables.</div></div>
+      <div class="step reveal" style="transition-delay:0.3s;"><div class="step-dot">03</div><div class="step-title">Code</div><div class="step-desc">Build the 7-digit provisional code. Note alternative readings at each level.</div></div>
+      <div class="step reveal" style="transition-delay:0.4s;"><div class="step-dot">04</div><div class="step-title">Shortlist</div><div class="step-desc">Identify remedy families that match the full code profile. Consult materia medica to differentiate.</div></div>
+      <div class="step reveal" style="transition-delay:0.5s;"><div class="step-dot">05</div><div class="step-title">Validate</div><div class="step-desc">Repertorise rubrics to confirm. Let the code and repertory converge on the simillimum.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CASES -->
+<section class="cases" id="cases">
+  <div class="container">
+    <div class="cases-intro">
+      <div class="reveal"><span class="section-label">The System in Practice</span><h2 class="section-title">Case Studies</h2><div class="gold-divider"></div><p class="section-body">Five documented cases demonstrate the EA Code moving from patient language to remedy selection — across mineral, plant, animal, and protist kingdoms.</p></div>
+      <div class="reveal" style="transition-delay:0.2s;"><p class="section-body" style="font-style:italic;color:var(--mid);">Each case is mapped digit by digit — showing how the code narrows the field from kingdom to simillimum, and how the system differentiates between closely related remedies such as Crocuta crocuta and Lac caninum.</p></div>
+    </div>
+    <div class="case-cards">
+      <div class="case-card reveal" onclick="openCasePanel(&#39;phosphorus&#39;)"><div class="case-code">Code · 1-3-3-3-2-6-15</div><div class="case-title">Bridging Radiance and Depletion</div><div class="case-remedy">Phosphorus 200C · Mineralia</div><div class="case-desc">A vivacious woman depleted despite doing everything right. The code reveals how her outward radiance masks a structural collapse at the mineral level.</div><div class="click-hint" style="color:var(--gold);margin-top:1rem;">Read full case →</div></div>
+      <div class="case-card reveal" style="transition-delay:0.1s;" onclick="openCasePanel(&#39;carcinosinum&#39;)"><div class="case-code">Code · 2-7-12</div><div class="case-title">The Mask of Perfection</div><div class="case-remedy">Carcinosinum 200C · Monera</div><div class="case-desc">Hormonal rosacea, suppressed emotion, and a perfectionist streak. The Monera kingdom reveals the fragmented self formed under chronic emotional pressure.</div><div class="click-hint" style="color:var(--gold);margin-top:1rem;">Read full case →</div></div>
+      <div class="case-card reveal" style="transition-delay:0.2s;" onclick="openCasePanel(&#39;malaria&#39;)"><div class="case-code">Code · 3-…</div><div class="case-title">Trapped in a Loop</div><div class="case-remedy">Malaria officinalis 200C · Protista</div><div class="case-desc">Cyclical migraines, manic-fatigue cycles, and an unshakeable rhythm. The Protista kingdom maps the parasitic pattern ruling this patient's life.</div><div class="click-hint" style="color:var(--gold);margin-top:1rem;">Read full case →</div></div>
+      <div class="case-card reveal" style="transition-delay:0.3s;" onclick="openCasePanel(&#39;arnica&#39;)"><div class="case-code">Code · 5-7-5-6-4-4-08</div><div class="case-title">A Web of Old Wounds</div><div class="case-remedy">Arnica montana 1M · Plantae</div><div class="case-desc">Recurrent joint swellings following a spider bite. Arnica is mapped to the Asteraceae family in Plantae — trauma, inflammation, and immune modulation.</div><div class="click-hint" style="color:var(--gold);margin-top:1rem;">Read full case →</div></div>
+      <div class="case-card reveal" style="transition-delay:0.4s;" onclick="openCasePanel(&#39;lac&#39;)"><div class="case-code">Code · 6-773.26.12</div><div class="case-title">Starved for Love</div><div class="case-remedy">Lac caninum 1M · Animalia</div><div class="case-desc">Emotional eating, betrayal, and suppressed desire. The Animal kingdom — and the fine distinction between Hyena and Dog's Milk — resolves the simillimum.</div><div class="click-hint" style="color:var(--gold);margin-top:1rem;">Read full case →</div></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- FOUNDER -->
+<section class="founders" id="founder">
+  <div class="container">
+    <div class="founders-inner">
+      <div class="reveal">
+        <div class="founders-name-block">
+          <div class="founders-name">Claudia<br>Regojo</div>
+          <div class="founders-title">Creator, Evolutionary Arc System</div>
+        </div>
+      </div>
+      <div class="reveal" style="transition-delay:0.2s;">
+        <blockquote class="founders-quote">Every remedy in the code is part of an evolutionary conversation. Minerals cry out from failure of form. Nosodes echo trauma from invasion. Fungi show us what happens when we adapt too much. And humans, in the centre of all this, must remember who they are. Healing is not becoming symptom-free. Healing is becoming aligned with the truth of your code.</blockquote>
+        <p style="font-size:0.68rem;font-weight:300;letter-spacing:0.15em;text-transform:uppercase;color:rgba(212,96,90,0.5);margin-top:1.5rem;">From: The Evolutionary Code — A Homeopathic Map of Consciousness, 2025</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Claudia Regojo &nbsp;·&nbsp; Tropical Homeopathy</p>
+  <p style="font-style:italic;font-family:&#39;Lora&#39;,serif;">The Evolutionary Arc System — A Unified Framework</p>
+</footer>
+
+<!-- OVERLAY PANEL -->
+<div class="overlay" id="overlay" onclick="closePanel(event)">
+  <div class="panel" id="panel">
+    <button class="panel-close" onclick="closeOverlay()">✕</button>
+    <div id="panel-content"></div>
+  </div>
+</div>
+
+<script>
+// ── SCROLL REVEAL ──
+const reveals = document.querySelectorAll('.reveal');
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold:0.08 });
+reveals.forEach(el => obs.observe(el));
+
+// ── PANEL LOGIC ──
+function openOverlay(html) {
+  const overlay = document.getElementById('overlay');
+  document.getElementById('panel-content').innerHTML = html;
+  overlay.style.display = 'flex';
+  requestAnimationFrame(() => { overlay.classList.add('visible'); });
+  document.body.style.overflow = 'hidden';
+}
+function closeOverlay() {
+  const overlay = document.getElementById('overlay');
+  overlay.classList.remove('visible');
+  setTimeout(() => { overlay.style.display='none'; document.body.style.overflow=''; }, 350);
+}
+function closePanel(e) { if(e.target === document.getElementById('overlay')) closeOverlay(); }
+
+// ── CODE LEVEL PANELS ──
+const codePanels = {
+  kingdom: {
+    eyebrow:'Level 01 · The Code',
+    title:'Kingdom',
+    subtitle:'What boundary reality is my world built on?',
+    body:`
+      <p>Kingdom is the first digit of every EA code — the broadest lens. It describes the fundamental nature of the world as the patient experiences it: not what happens to them, but what kind of world they believe they are living in.</p>
+      <p>The seven kingdoms follow the Joshi boundary arc, from no boundaries (Mineralia) to disintegrating boundaries (Homo Sapiens). Each kingdom has a key question — the existential question the patient is asking, whether consciously or not.</p>
+      <h4>Clinical question</h4>
+      <p><em>If you had to describe your fundamental relationship with the world in one sentence — not what you do in it, but what it feels like to be in it — what would you say?</em></p>
+      <p>Follow-up: <em>When something goes deeply wrong, what is the feeling that arises first — before you do anything about it?</em></p>
+      <h4>The Seven Kingdoms</h4>
+      <table class="map-table">
+        <tr><th>#</th><th>Kingdom</th><th>Boundary state</th><th>Key question</th><th>Clinical marker</th></tr>
+        <tr><td>1</td><td>Mineralia</td><td>No boundaries</td><td>Am I enough?</td><td>Structure, lack, stability — "I must hold on"</td></tr>
+        <tr><td>2</td><td>Monera</td><td>Within boundaries</td><td>Am I safe?</td><td>Invasion, threat — "I am not safe"</td></tr>
+        <tr><td>3</td><td>Protista</td><td>Finding boundaries</td><td>Am I accepted?</td><td>Identity, belonging — "Do I fit in?"</td></tr>
+        <tr><td>4</td><td>Fungi</td><td>Securing boundaries</td><td>Am I capable?</td><td>Function, corruption — "I am being drained"</td></tr>
+        <tr><td>5</td><td>Plantae</td><td>Exploring boundaries</td><td>Am I admired?</td><td>Sensitivity, reactivity — "I must adapt"</td></tr>
+        <tr><td>6</td><td>Animalia</td><td>Ruling boundaries</td><td>Am I respected?</td><td>Competition, power — "It is a game I must win"</td></tr>
+        <tr><td>7</td><td>Homo Sapiens</td><td>Disintegrating boundaries</td><td>Am I free?</td><td>Meaning, transcendence — "Why are we here?"</td></tr>
+      </table>
+    `
+  },
+  phylum: {
+    eyebrow:'Level 02 · The Code',
+    title:'Phylum',
+    subtitle:'What am I here to learn?',
+    body:`
+      <p>Phylum is the second digit and describes the patient's developmental life task — the thing they are here to work on, the challenge that keeps reappearing across different chapters of their life.</p>
+      <p>This is not what they want (that is Class). It is what they are built to engage with — their energetic bandwidth, their maximum developmental reach. The Phylum is often visible in the thread that runs through someone's whole life whether they chose it or not.</p>
+      <h4>Clinical question</h4>
+      <p><em>Looking back at your life as a whole — what is the thread that keeps appearing? The thing you keep coming back to working on, whether you chose it or not?</em></p>
+      <p>Follow-up: <em>What do you feel you haven't quite mastered yet — the thing that life keeps presenting you with in different forms?</em></p>
+      <h4>The Seven Life Tasks</h4>
+      <table class="map-table">
+        <tr><th>#</th><th>Boundary state</th><th>Life task</th><th>Clinical marker</th></tr>
+        <tr><td>1</td><td>No boundaries</td><td>I have not yet formed</td><td>Life task is simply existing and being present</td></tr>
+        <tr><td>2</td><td>Within boundaries</td><td>I am learning to be safe</td><td>Recurring theme of safety and being loved, attachment wounds</td></tr>
+        <tr><td>3</td><td>Finding boundaries</td><td>I am learning to belong</td><td>Recurring theme of finding a place — "I never quite fit in"</td></tr>
+        <tr><td>4</td><td>Securing boundaries</td><td>I am learning to be useful</td><td>Recurring theme of duty, competence, earning a place</td></tr>
+        <tr><td>5</td><td>Exploring boundaries</td><td>I am learning to express myself</td><td>Recurring theme of authentic self-expression and recognition</td></tr>
+        <tr><td>6</td><td>Ruling boundaries</td><td>I am learning to lead</td><td>Recurring theme of leadership, responsibility, stepping forward</td></tr>
+        <tr><td>7</td><td>Disintegrating boundaries</td><td>I am learning to let go</td><td>Recurring theme of meaning, transcendence — "what is the point?"</td></tr>
+      </table>
+      <h4>Clinical tip</h4>
+      <p>The Phylum is where the person is <strong>truly stuck</strong> in their development. It is not a flaw — it is the work they came to do. The Phylum 6 patient who keeps hiding from leadership is not failing; they are circling the work they are built for.</p>
+    `
+  },
+  class: {
+    eyebrow:'Level 03 · The Code',
+    title:'Class',
+    subtitle:'What do I aspire toward?',
+    body:`
+      <p>Class is the third digit and reveals the patient's hidden aspiration — what the soul reaches for, even when it cannot access it. It is often unconscious or expressed as its opposite (the person who longs to lead but lives as the outsider; the person who longs to be seen but hides).</p>
+      <p>Class describes the axis of the patient's life, not necessarily their presentation. The same Class position can manifest as expressed (fully accessible), suppressed (blocked or inverted), or straining (oscillating between poles).</p>
+      <h4>Clinical question</h4>
+      <p><em>What do you really want that you haven't quite let yourself have yet?</em></p>
+      <p>Follow-up: <em>When you imagine your career or life working really well — what specifically is happening? What are you doing, and how are others relating to you?</em></p>
+      <p style="font-size:0.85rem;color:var(--mid);font-style:italic;">If the dream ends with recognition → Class 5. If it ends with impact and transformation → Class 6.</p>
+      <h4>The Seven Aspirations</h4>
+      <table class="map-table">
+        <tr><th>#</th><th>Boundary state</th><th>Aspiration</th><th>Clinical marker</th></tr>
+        <tr><td>1</td><td>No boundaries</td><td>I long to merge</td><td>"I just want to exist without all this pressure"</td></tr>
+        <tr><td>2</td><td>Within boundaries</td><td>I long to be held</td><td>"I want to feel safe and loved unconditionally"</td></tr>
+        <tr><td>3</td><td>Finding boundaries</td><td>I long to belong</td><td>"I want to be truly part of something real"</td></tr>
+        <tr><td>4</td><td>Securing boundaries</td><td>I long to be useful</td><td>"I want to be good at what I do and earn my place"</td></tr>
+        <tr><td>5</td><td>Exploring boundaries</td><td>I long to be seen</td><td>"I want to shine and be seen for who I really am"</td></tr>
+        <tr><td>6</td><td>Ruling boundaries</td><td>I long to lead</td><td>"I want to make a difference, to matter at scale"</td></tr>
+        <tr><td>7</td><td>Disintegrating boundaries</td><td>I long to be free</td><td>"I want to be free of all of this"</td></tr>
+      </table>
+      <h4>Clinical tip</h4>
+      <p>The tension between <strong>Class and Order</strong> is often where the pathology lives. The person who longs to lead (Class 6) but disappears under pressure (Order 1) carries that gap in their body.</p>
+    `
+  },
+  order: {
+    eyebrow:'Level 04 · The Code',
+    title:'Order',
+    subtitle:'How do I survive?',
+    body:`
+      <p>Order is the fourth digit — the patient's instinctive survival strategy. Not what they aspire to (that is Class), but what they actually do under pressure, before reflection. The default operating system when things go wrong.</p>
+      <p>Order is often the most visible level in a consultation. It shows up in behavior, in how the patient describes handling conflict, in what they do when they cannot get what they need.</p>
+      <h4>Clinical questions</h4>
+      <p><em>In order to get to where you want to be — what do you actually do?</em></p>
+      <p>Follow-up: <em>When things go wrong, what do you do first?</em></p>
+      <p style="font-size:0.85rem;color:var(--mid);font-style:italic;">Both questions should produce the same answer. If they differ, use the more instinctive response.</p>
+      <h4>The Seven Strategies</h4>
+      <table class="map-table">
+        <tr><th>#</th><th>Boundary state</th><th>Strategy</th><th>Survival logic</th></tr>
+        <tr><td>1</td><td>No boundaries</td><td>I disappear</td><td>"If I disappear, I won't be harmed"</td></tr>
+        <tr><td>2</td><td>Within boundaries</td><td>I stay close</td><td>"If I stay close, I'll be protected"</td></tr>
+        <tr><td>3</td><td>Finding boundaries</td><td>I fit in</td><td>"If I fit in, I'll be safe"</td></tr>
+        <tr><td>4</td><td>Securing boundaries</td><td>I take control</td><td>"If I take charge, I can prevent disaster"</td></tr>
+        <tr><td>5</td><td>Exploring boundaries</td><td>I perform</td><td>"If I'm seen, I'll matter and belong"</td></tr>
+        <tr><td>6</td><td>Ruling boundaries</td><td>I carry it all</td><td>"If I carry everything, I can keep order"</td></tr>
+        <tr><td>7</td><td>Disintegrating boundaries</td><td>I withdraw</td><td>"If I detach completely, I won't feel the pain"</td></tr>
+      </table>
+    `
+  },
+  family: {
+    eyebrow:'Level 05 · The Code',
+    title:'Family',
+    subtitle:'Who am I in the group?',
+    body:`
+      <p>Family is the fifth digit and reveals the constitutional role the patient occupies in every group they enter — at work, in their family, in social settings. This role tends to be consistent across different contexts and different people, even when the patient consciously tries to change it.</p>
+      <p>The Family level is best identified through a <strong>specific story</strong>, not a direct question. When a patient describes a real situation with real people, the role reveals itself naturally.</p>
+      <h4>Clinical question</h4>
+      <p><em>Think of a specific situation — at work, school, or in a social group — where you were with a group of peers. Tell me what happened. What did you do?</em></p>
+      <p>Follow-up: <em>Is the role you described where you want to be — or is something keeping you there?</em></p>
+      <p style="font-size:0.85rem;color:var(--mid);font-style:italic;">The story reveals the Family. The follow-up reveals whether this is a constitutional role or a protective one.</p>
+      <h4>The Seven Roles</h4>
+      <table class="map-table">
+        <tr><th>#</th><th>Boundary state</th><th>Role</th><th>Clinical marker</th></tr>
+        <tr><td>1</td><td>No boundaries</td><td>I am invisible</td><td>Not present or noticed in the story; no defined role</td></tr>
+        <tr><td>2</td><td>Within boundaries</td><td>I am the one who is held</td><td>Others attend to them; needy, fragile, loved quality</td></tr>
+        <tr><td>3</td><td>Finding boundaries</td><td>I am the helper</td><td>Accommodating, bridge-building — "I just do what's needed"</td></tr>
+        <tr><td>4</td><td>Securing boundaries</td><td>I am the responsible one</td><td>Others depend on them; they hold the structure together</td></tr>
+        <tr><td>5</td><td>Exploring boundaries</td><td>I am the expressive one</td><td>Valued for who they are rather than what they do; standout</td></tr>
+        <tr><td>6</td><td>Ruling boundaries</td><td>I am the leader</td><td>Central, organising, protective — the one the group turns to</td></tr>
+        <tr><td>7</td><td>Disintegrating boundaries</td><td>I am the outsider</td><td>Peripheral, included but not central, fundamentally different</td></tr>
+      </table>
+    `
+  },
+  genus: {
+    eyebrow:'Level 06 · The Code',
+    title:'Genus',
+    subtitle:'How do I feel about that?',
+    body:`
+      <p>Genus is the sixth digit — the patient's inner experience of their role. Two patients can occupy the same Family position and experience it completely differently. It is not the role itself that creates pathology; it is how the person feels about inhabiting it.</p>
+      <p>Genus emerges naturally from the Family story. Once the patient has described a group situation, asking how they felt about where they ended up reveals the Genus tone.</p>
+      <h4>Clinical question</h4>
+      <p><em>In that situation — how did you feel about where you ended up? Was it comfortable, frustrating, something you accepted, something you fought against?</em></p>
+      <p>Follow-up: <em>Which feels most true: "I never really identified with this role" — "I am afraid they won't accept me if I step forward" — "I resent this role" — or "I am done with this role"?</em></p>
+      <h4>The Seven Inner Experiences</h4>
+      <table class="map-table">
+        <tr><th>#</th><th>Boundary state</th><th>Inner experience</th><th>Clinical marker</th></tr>
+        <tr><td>1</td><td>No boundaries</td><td>I don't identify with my role</td><td>"This role doesn't feel real to me" — floats, detaches</td></tr>
+        <tr><td>2</td><td>Within boundaries</td><td>I am uncertain in my role</td><td>Fear of rejection or dislike — "I'm afraid they won't accept me"</td></tr>
+        <tr><td>3</td><td>Finding boundaries</td><td>I am willing in my role</td><td>Cooperative, accepts role without major conflict, self-effacing</td></tr>
+        <tr><td>4</td><td>Securing boundaries</td><td>I am stable in my role</td><td>"This is who I am" — fully at home, no tension about the role</td></tr>
+        <tr><td>5</td><td>Exploring boundaries</td><td>I am resentful in my role</td><td>"I give so much and it goes unseen" — frustrated, bitter</td></tr>
+        <tr><td>6</td><td>Ruling boundaries</td><td>I am overburdened in my role</td><td>"It all falls on me" — heavy, manages emotion to maintain control</td></tr>
+        <tr><td>7</td><td>Disintegrating boundaries</td><td>I am done with my role</td><td>"I've pulled back entirely" — cynical, no longer invests</td></tr>
+      </table>
+    `
+  },
+  species: {
+    eyebrow:'Level 07 · The Code',
+    title:'Species',
+    subtitle:'How far have I come?',
+    body:`
+      <p>Species — or Stage — is the seventh and most specific digit. It describes where the patient is on the evolutionary arc at this moment in their life: whether they are building, holding, declining, or transforming.</p>
+      <p>Stage is assigned by convergence: the evolutionary age of the organism within its group provides an approximate range, and behavioral characteristics confirm the exact position. The same Stage descriptions apply universally across all kingdoms.</p>
+      <h4>Clinical questions</h4>
+      <p><em>Right now, does your life feel like it's building toward something, holding steady at its peak, or has it passed a peak and is moving in a different direction?</em></p>
+      <p><em>When you set a goal — what happens? Do you pursue it with energy, work hard to hold onto it, doubt and hesitate, or tend to give up?</em></p>
+      <p><em>Has your world gotten bigger or smaller in recent years?</em></p>
+      <p><em>When things don't work out — do you fight to get back, start and stop repeatedly, quietly step back, or no longer care the way you used to?</em></p>
+      <h4>The 18 Stages</h4>
+      <table class="map-table">
+        <tr><th>Stage</th><th>Name</th><th>Phase</th><th>Behavioral marker</th></tr>
+        <tr><td>1</td><td>Initiating</td><td>Beginning</td><td>Clingy, inseparable, needs constant support</td></tr>
+        <tr><td>2</td><td>Assessing</td><td>Beginning</td><td>Tentative, seeks reassurance before acting</td></tr>
+        <tr><td>3</td><td>Searching</td><td>Childhood</td><td>Indecisive, exploring options, cannot settle</td></tr>
+        <tr><td>4</td><td>Establishing</td><td>Childhood</td><td>Building slowly, irresolute but present</td></tr>
+        <tr><td>5</td><td>Preparing</td><td>Childhood</td><td>Postponing, gets ready but does not begin</td></tr>
+        <tr><td>6</td><td>Proving</td><td>Teenage</td><td>Impulsive, testing self, risk-taking</td></tr>
+        <tr><td>7</td><td>Learning</td><td>Teenage</td><td>Cooperative, responsive, open to guidance</td></tr>
+        <tr><td>8</td><td>Persevering</td><td>Teenage</td><td>Strong, pushing through obstacles</td></tr>
+        <tr><td>9</td><td>Actualizing</td><td>Adult</td><td>Perfectionist, peak control, in command</td></tr>
+        <tr><td>10</td><td>Justifying</td><td>Adult</td><td>Overconfident, defends position, past peak</td></tr>
+        <tr><td>11</td><td>Maintaining</td><td>Adult</td><td>Holds with full strength, resists change</td></tr>
+        <tr><td>12</td><td>Exaggerating</td><td>Middle age</td><td>Fights to regain, starts again, missing out</td></tr>
+        <tr><td>13</td><td>Reducing</td><td>Middle age</td><td>Gives up, retreats, world gets smaller</td></tr>
+        <tr><td>14</td><td>Disengaging</td><td>Middle age</td><td>Detached, resigned, weak but overconfident</td></tr>
+        <tr><td>15</td><td>Losing</td><td>Old age</td><td>Restless, cannot settle, needs to move on</td></tr>
+        <tr><td>16</td><td>Decaying</td><td>Old age</td><td>Selfish, hurtful, taking from others</td></tr>
+        <tr><td>17</td><td>Erasing</td><td>Old age</td><td>Destructive, dismantling what remains</td></tr>
+        <tr><td>18</td><td>Pausing</td><td>Completion</td><td>Transformation, peaceful release, letting go</td></tr>
+      </table>
+      <h4>Clinical tip</h4>
+      <p>Stages 1–9 are the <strong>ascending arc</strong> — building, growing, testing. Stages 10–18 are the <strong>descending arc</strong> — past peak, contracting, dissolving. Stages 12–13 are often an oscillation rather than a fixed point.</p>
+    `
+  }
+};
+
+function openCodePanel(key) {};
+
+function openCodePanel(key) {
+  const d = codePanels[key];
+  const html = `
+    <div class="panel-eyebrow">${d.eyebrow}</div>
+    <h2 class="panel-title">${d.title}</h2>
+    <p class="panel-subtitle">${d.subtitle}</p>
+    <div class="panel-divider"></div>
+    <div class="panel-body">${d.body}</div>
+  `;
+  openOverlay(html);
+}
+
+// ── KINGDOM PANELS ──
+const kingdomData = {
+  mineralia: {
+    num:'Kingdom 1', name:'Mineralia', question:'"Am I enough?"',
+    stage:'Birth to Infancy', sensation:'I am incomplete',
+    theme:'Structure, stability, fragmentation',
+    description:`Minerals represent the first realm of consciousness — pure in form, yet pre-biological. Lacking mobility, competition, or emotional reactivity, they express themselves through themes of <strong>deficiency, capacity, and structural integrity</strong>.`,
+    profile:[
+      ['Core Question','Am I enough to endure this?'],
+      ['Conflict Type','Structural, internal, identity-related'],
+      ['Primary Axis','Integrity vs. collapse'],
+      ['Developmental Age','Birth to early ego formation (0–3 years)'],
+      ['Coping Strategy','Rigidification, withdrawal, silence, perfection'],
+      ['Energy Pattern','Low to medium; collapses under stress'],
+    ],
+    language:['"I lack…"','"I need…"','"I must hold on…"','"Everything is falling apart."','"I am not strong enough."'],
+    mapRows:[
+      ['Series 1 – Hydrogen','Being, existence','Hydrogenium, Helium'],
+      ['Series 2 – Carbon','Security, childhood','Calcarea carb., Baryta carb., Magnesia'],
+      ['Series 3 – Silica','Performance, identity','Silicea, Phosphorus, Natrum mur.'],
+      ['Series 4 – Iron','Duty, work, function','Ferrum met., Cuprum met.'],
+      ['Series 5 – Silver','Creativity, expression','Argentum nit., Stannum met.'],
+      ['Series 6 – Gold','Responsibility, failure','Aurum met., Plumbum met., Bismuthum'],
+      ['Series 7 – Uranium','Spirituality, letting go','Uranium nit., Plutonium nit.'],
+    ],
+    examples:['Calcarea carbonica — "I must build myself slowly, brick by brick"','Natrum muriaticum — "I carry the weight of sorrow, alone and unseen"','Ferrum metallicum — "I must stay strong; weakness is not allowed"'],
+    distinguish:`Mineral patients are <strong>inward-facing</strong>. They are not motivated by validation, dominance, or adaptation — only by the need to be enough. Compare: Animals compare and fight; Plants react emotionally; Fungi adapt and absorb; Monera feel invaded.`
+  },
+  monera: {
+    num:'Kingdom 2', name:'Monera', question:'"Am I safe?"',
+    stage:'Early Childhood', sensation:'I am not safe',
+    theme:'Invasion, parasitism, defense',
+    description:`Monera — bacteria and archaea — represent the first spark of life. In homeopathic terms they represent the struggle to survive in a world that feels <strong>invasive, unsafe, and overwhelming</strong>. These are boundary organisms, and their patients feel constantly negotiating between survival and threat.`,
+    profile:[
+      ['Core Question','Am I safe in this world?'],
+      ['Conflict Type','Boundary invasion, parasitism, threat of disintegration'],
+      ['Primary Axis','Self vs. not-self'],
+      ['Developmental Age','Infancy — pre-verbal, early threat imprint'],
+      ['Coping Strategy','Hide, mimic, submit, detach'],
+      ['Energy Pattern','Vacillates between hyper-vigilant and shut down'],
+    ],
+    language:['"I feel attacked…"','"I can\'t protect myself."','"Everything affects me."','"I don\'t have the strength to resist."'],
+    mapRows:[
+      ['Phylum — Rod (Motile)','Curious, hypersensitive','E. coli, Pseudomonas'],
+      ['Phylum — Sphere (Cocci)','Group-bonded, dependent','Streptococcus, Staphylococcus'],
+      ['Phylum — Filamentous','Network builder, anxious','Actinobacteria, Cyanobacteria'],
+      ['Phylum — Spore-Forming','Prepared survivor, rigid','Bacillus, Clostridium'],
+      ['Phylum — Wall-less','Adaptive shape-shifter','Mycoplasma spp.'],
+    ],
+    examples:['Lyssinum — "I am being taken over by an uncontrollable force"','Diphtherinum — "I am being silenced or suffocated from within"','Streptococcinum — "My system is under siege — I fight, or I collapse"'],
+    distinguish:`In Monera, the threat is <strong>external</strong> — breach of boundary. Compare: Mineralia threats are internal (collapse of structure); Protista fears dissolution or rejection; Fungi fear being drained or corroded.`
+  },
+  protista: {
+    num:'Kingdom 3', name:'Protista', question:'"Am I accepted?"',
+    stage:'Puberty to Adolescence', sensation:'I am not accepted',
+    theme:'Emotional identity, comparison, formlessness',
+    description:`Protists are eukaryotic yet unstructured — the first organisms with a nucleus but no rigid form. In the human psyche, Protista represents <strong>emotional consciousness emerging</strong>, the earliest experience of "I am me, and I feel something." This is the kingdom of in-betweenness, emotional flux, and identity without form.`,
+    profile:[
+      ['Core Question','Do I belong? Is it okay to be me?'],
+      ['Conflict Type','Identity vs. adaptation'],
+      ['Primary Axis','Emotional dependency vs. fear of engulfment'],
+      ['Developmental Age','Early childhood to adolescence'],
+      ['Coping Strategy','Imitation, fusion, emotional oscillation'],
+      ['Energy Pattern','Swings between hyper-emotive and emotionally absent'],
+    ],
+    language:['"Who am I?"','"Do I belong?"','"I merge with others — then feel lost."','"I need connection, but I hate feeling controlled."'],
+    mapRows:[
+      ['Amorphous — Amoeba','Shapeless, permeable','Identity unstable, emotional leakage'],
+      ['Flagellated — Euglena','Directional, striving','Tries to find place or role'],
+      ['Armored — Foraminifera','Hard outer coating','Rigid persona, fear of intrusion'],
+      ['Encysted forms','Dormant, sealed','Emotional shutdown, frozen in time'],
+      ['Colonial — Volvox','Multi-cellular groups','Enmeshed identity, fused with group'],
+    ],
+    examples:['Toxoplasma gondii — parasitic rhythms, loss of inner autonomy','Amoeba histolytica — GI disturbances, mimicking amoebic infection patterns','Paramecium-based nosodes — early relational trauma, sensory confusion'],
+    distinguish:`Protista lack the clarity of other kingdoms — and <strong>that lack of clarity is the signature</strong>. Compare: Monera fear invasion; Protista fear dissolution or rejection; Fungi fear corrosion. The Protista patient is often overlooked because they don't fit neatly into plant or mineral dynamics.`
+  },
+  fungi: {
+    num:'Kingdom 4', name:'Fungi', question:'"Am I capable?"',
+    stage:'Young Adulthood', sensation:'I cannot sustain myself',
+    theme:'Decomposition, reliance, erosion',
+    description:`Fungi straddle life and decay. They break down the old to feed the new. In the human psyche, they represent the struggle between <strong>autonomy and dependence</strong>, often experienced in early adulthood. Fungal cases often describe invisible invasion: "I'm being drained," or "I'm overtaken."`,
+    profile:[
+      ['Core Question','How do I survive in a world that takes from me?'],
+      ['Conflict Type','Emotional corrosion, parasitism, moral ambivalence'],
+      ['Primary Axis','Fusion vs. resistance'],
+      ['Developmental Age','Late adolescence/early adulthood — first compromises'],
+      ['Coping Strategy','Adjust, absorb, suppress, silently corrode'],
+      ['Energy Pattern','Passive outwardly; internally reactive or toxic'],
+    ],
+    language:['"I\'m being eaten away."','"I depend too much on…"','"I\'ll become what they need me to be."','"I feel drained."'],
+    mapRows:[
+      ['Chytridiomycota','Zoosporic, flagellated','Latent survival, hidden motion'],
+      ['Ascomycota','Sac fungi, includes yeasts','Inner rot manifests before grand show'],
+      ['Basidiomycota','Mushrooms, rusts, smuts','Performance reveals hidden toxicity'],
+      ['Dimorphic Fungi','Switches yeast/mold','Dual identities, split behavior'],
+      ['Glomeromycota','Mycorrhizal, invisible nets','Quiet infiltration, compliance beneath surface'],
+    ],
+    examples:['Candida albicans — absorption, suppression, dependency','Penicillium notatum — resistance through chemical defense, passive-aggressive','Aspergillus niger — destructive internal corrosion, burnout with immune collapse'],
+    distinguish:`Fungi often <strong>mimic plants externally</strong> but lack their vibrancy and reactivity. Instead they carry internalized decay and a sense of emotional or energetic compromise. The patient is passive but feels corroded inside. Look for a history of suppression, toxic overload, or medical overintervention.`
+  },
+  plantae: {
+    num:'Kingdom 5', name:'Plantae', question:'"Am I admired?"',
+    stage:'Maturity', sensation:'I must adapt, or I will perish',
+    theme:'Reactivity, sensitivity, beauty, suppression',
+    description:`Plants react to their environment — to light, to pressure, to trauma. Unlike minerals who structure themselves or animals who compete, <strong>plants sense and adjust</strong>. Plant-type patients often feel overstimulated, unstable, or caught in cycles of restlessness and suppression.`,
+    profile:[
+      ['Core Question','What do I do with what I feel?'],
+      ['Conflict Type','Reactivity, suppression, emotional fluctuation'],
+      ['Primary Axis','Expression vs. inhibition'],
+      ['Developmental Age','Late childhood through adolescence'],
+      ['Coping Strategy','Feel, react, suppress, harmonise, dramatise'],
+      ['Energy Pattern','High, unstable, responsive to context'],
+    ],
+    language:['"I can\'t stand it."','"I must move."','"I feel too much."','"I need harmony."'],
+    mapRows:[
+      ['Green Algae (Chlorophyta)','Origins of photosynthesis','Aspiration to exist; reach toward light'],
+      ['Bryophytes','First land plants, no vascular','Grounding; grow in soft, moist world'],
+      ['Pteridophytes (Ferns)','Vascular but seedless','Rise; stand upright through resilience'],
+      ['Gymnosperms','First seed plants, non-flowering','Endure; slow, timeless strength'],
+      ['Basal Angiosperms','Early flowering','Sensitivity and sensory awakening'],
+      ['Monocots','Parallel-veined flowering','Function and contribute; devotional purpose'],
+      ['Core Eudicots','Advanced flowering plants','Individuate and express; creative evolution'],
+    ],
+    examples:['Pulsatilla — yielding, emotional dependence, "I need to be loved to feel okay"','Nux vomica — irritability, internal control vs. external chaos','Ignatia — romantic grief, conflicted expression, spasmodic symptoms','Arnica — trauma, bruising, systemic reactive inflammation (Asteraceae)'],
+    distinguish:`The Plant experience is the <strong>sensation itself</strong> — rich, unstable, colorful, and often dramatic. Unlike animals (who compare and compete), plants suffer through the <em>intensity of experience</em>. Their symptoms oscillate between suppression and expression.`
+  },
+  animalia: {
+    num:'Kingdom 6', name:'Animalia', question:'"Am I respected?"',
+    stage:'Later Adulthood', sensation:'I must fight, win, or submit',
+    theme:'Competition, instinct, sexuality, role',
+    description:`Animals bring mobility and nervous systems. They experience power, territory, and survival as dominant themes. Animal remedies center around <strong>status, mating, dominance, performance, and comparison</strong>. The Animal consciousness is dualistic: me versus you, predator versus prey, alpha versus omega.`,
+    profile:[
+      ['Core Question','Where do I fit in the power structure?'],
+      ['Conflict Type','Duality: power vs. vulnerability, performance vs. failure'],
+      ['Primary Axis','Me vs. You (ego, competition, sexuality)'],
+      ['Developmental Age','Mid-to-late adolescence (identity in society)'],
+      ['Coping Strategy','Compare, perform, seduce, dominate, flee'],
+      ['Energy Pattern','High, oscillating, often explosive or compulsive'],
+    ],
+    language:['"They attacked me."','"I had to assert myself."','"I lost my status."','"I won\'t let them beat me."'],
+    mapRows:[
+      ['Parazoa (Sponges, Placozoa)','Passive filtration','No defined self; emotional absorption'],
+      ['Cnidaria','Radial symmetry, stingers','Defensive sensitivity; reactivity to insult'],
+      ['Arthropoda','Exoskeleton, fast reflexes','Alertness, quick defense, performance under pressure'],
+      ['Mollusca (Spiralia)','Soft body, sometimes shelled','Soft interior, armored exterior; vulnerability under protection'],
+      ['Reptilia','Armored, ancient','Territorial, cold, strategic'],
+      ['Aves (Birds)','Aerial, elevated','Freedom-seeking, perspective, distance'],
+      ['Mammalia','Speed, emotional depth','Instinctual drive; relational, nurturing, sexual'],
+    ],
+    examples:['Lachesis muta — survival through dominance, suspicion, seduction','Falco peregrinus — precision, freedom, discipline; "I soar but long for belonging"','Sepia officinalis — emotional retreat, sexual shutdown, "If I let anyone in, I\'ll lose myself"'],
+    distinguish:`Animal patients live in <strong>comparison and contrast</strong>. Their language is competitive, relational, and dualistic. Unlike plants (who react to stimuli), animals react to <em>other beings</em>. Look for themes of betrayal, attack, humiliation, or a strong sense of hierarchy.`
+  },
+  homo: {
+    num:'Kingdom 7', name:'Homo Sapiens', question:'"Am I free?"',
+    stage:'Old Age — Transcendence', sensation:'I must find meaning or disappear',
+    theme:'Abstract thought, individuation, surrender',
+    description:`In the human realm, consciousness turns inward toward <strong>meaning, mortality, and detachment</strong>. The pain here arises not from external threat but from internal conflict: unfulfilled potential, broken ideals, or alienation from the true self. These are remedies for deep introspection, existential crisis, or the burden of self-awareness itself.`,
+    profile:[
+      ['Core Question','"Am I true to myself?" or "What is the point of all this?"'],
+      ['Conflict Type','Integrity vs. self-betrayal; Ideal vs. reality'],
+      ['Primary Axis','Me vs. My Own Conscience (shame, failure, legacy)'],
+      ['Developmental Age','Adulthood and beyond — reflective life stages'],
+      ['Coping Strategy','Withdraw, idealise, rationalise, sacrifice, strive'],
+      ['Energy Pattern','Low to moderate, often repressed or burned out'],
+    ],
+    language:['"What is the point?"','"I should be better than this."','"I\'ve failed at what matters most."','"I want to evolve beyond this."'],
+    mapRows:[
+      ['Phylum — Instinctual','Gut-knowing, survival body','Rooted in body, primal drive'],
+      ['Phylum — Emotional','Feeling-based','Driven by empathy, bonding, sensitivity'],
+      ['Phylum — Rational','Logic and structure','Mind-led, order, justice, system thinking'],
+      ['Phylum — Existential','Meaning-seeking','Asks "why": spiritual hunger or dread'],
+      ['Phylum — Integral','Meta-awareness','Witness state: holds paradox, unity in duality'],
+    ],
+    examples:['Carcinosinum — suppression of self, striving for perfection, "If I am not perfect, I will be unloved"','Lac humanum — nourishment, abandonment, fractured identity','Saccharum officinale — sweetness, craving, loss of self; "If I stay sweet, I won\'t be hurt"'],
+    distinguish:`Human remedies bring <strong>suffering born from self-consciousness and moral pressure</strong>. The question is not "am I safe" or "am I respected" — it is "am I living in alignment with my true self?" Look for themes of shame, guilt, authenticity, legacy, and the painful gap between the ideal self and reality.`
+  }
+};
+
+function openKingdomPanel(key) {
+  const d = kingdomData[key];
+  const langTags = d.language.map(l => `<span class="panel-tag">${l}</span>`).join('');
+  const profileRows = d.profile.map(r => `<tr><td><strong>${r[0]}</strong></td><td>${r[1]}</td></tr>`).join('');
+  const mapRows = d.mapRows.map(r => `<tr><td>${r[0]}</td><td>${r[1]}</td><td style="color:var(--mid);font-size:0.82rem;">${r[2]}</td></tr>`).join('');
+  const exampleList = d.examples.map(e => `<li>${e}</li>`).join('');
+
+  const html = `
+    <div class="panel-eyebrow">${d.num} · The Seven Kingdoms</div>
+    <h2 class="panel-title">${d.name}</h2>
+    <p class="panel-subtitle">${d.question} &nbsp;·&nbsp; ${d.stage}</p>
+    <div class="panel-divider"></div>
+    <div class="panel-body">
+      <p><strong>Key Sensation:</strong> ${d.sensation}<br><strong>Core Theme:</strong> ${d.theme}</p>
+      <p>${d.description}</p>
+      <h4>Patient Language</h4>
+      <div>${langTags}</div>
+      <h4>Psychological Profile</h4>
+      <table class="map-table">
+        <tr><th>Dimension</th><th>Expression</th></tr>
+        ${profileRows}
+      </table>
+      <h4>Kingdom Map (Phylum Level)</h4>
+      <table class="map-table">
+        <tr><th>Phylum / Series</th><th>Theme</th><th>Examples</th></tr>
+        ${mapRows}
+      </table>
+      <h4>Remedy Examples</h4>
+      <ul>${exampleList}</ul>
+      <h4>Differentiating from Other Kingdoms</h4>
+      <p>${d.distinguish}</p>
+    </div>
+  `;
+  openOverlay(html);
+}
+
+// ── CASE PANELS ──
+const casePanels = {
+  phosphorus: {
+    eyebrow:'Case 1 · Mineralia · EA Code 1-3-3-3-2-6-15',
+    title:'Bridging Radiance and Depletion',
+    remedy:'Phosphorus 200C',
+    body:`
+      <h4>Presenting Concerns</h4>
+      <p>A vivacious woman in her mid-40s presents with a longstanding concern about her declining health. Once full of vitality, energy, and sociability, she now feels as though her inner resources are depleted. Her health history includes:</p>
+      <ul>
+        <li>Hypothyroidism diagnosed post-childbirth (18 years ago), with persistent fatigue and hair loss despite medication</li>
+        <li>Severe sleep disturbances for 11 years — wakes between 2:30 and 3:00 a.m. with heart racing and an inflamed mental state ("brain on fire")</li>
+        <li>Migraines since adolescence, now triggered by sleep deprivation</li>
+        <li>Celiac disease, spatial disorientation, noise sensitivity, and general system overload following poor sleep</li>
+        <li>Sense of inner sabotage: "How can I do all the right things and still feel this bad?"</li>
+      </ul>
+      <h4>Mental and Emotional Picture</h4>
+      <p>Despite the fatigue, the patient remains outwardly joyful, warm, witty, and emotionally open. She loves people, laughter, and being of service — a woman who says yes to life but feels as though her body is saying no. She is disturbed by social injustice, especially toward children, animals, and the homeless.</p>
+      <p>She describes herself as a "nuclear reactor" — calm in crisis, yet overreactive to small daily irritations. There is a dichotomy between internal sensitivity and external calm. She has an idealistic nature and believes that if she could just sleep, she could "conquer the world."</p>
+      <h4>Classical Remedy Analysis</h4>
+      <p>The patient's mental-emotional picture aligns clearly with Phosphorus:</p>
+      <ul>
+        <li>Open, empathic, loving personality</li>
+        <li>High sensitivity to external impressions (noise, touch, light)</li>
+        <li>Easily depleted, yet deeply giving</li>
+        <li>Affinity for the nervous system, thyroid, and digestion</li>
+        <li>Burnout from emotional and sensory overstimulation</li>
+        <li>Craving for sugar after sleep or migraine</li>
+      </ul>
+      <h4>EA Code Analysis</h4>
+      <table class="map-table">
+        <tr><th>Level</th><th>Code</th><th>Interpretation</th></tr>
+        <tr><td>Kingdom</td><td>1 – Mineralia</td><td>The fundamental struggle is about structure and sustainability — how to maintain form and coherence under stress</td></tr>
+        <tr><td>Phylum</td><td>3 – Silica Series</td><td>Navigating the developmental challenge of relational belonging — identity shaped through social interaction and early self-expression</td></tr>
+        <tr><td>Class</td><td>3 – p-block</td><td>Mental-emotional overexertion, outward radiance, and exhaustion — all energy moves outward</td></tr>
+        <tr><td>Order</td><td>3 – Other nonmetals</td><td>Energetic, reactive, and non-grounded chemistry — not structurally resilient, but powerful in bursts</td></tr>
+        <tr><td>Family</td><td>2 – Nitrogen family</td><td>Highly expressive, fluctuating in intensity, balancing survival instinct with emotional vulnerability</td></tr>
+        <tr><td>Genus</td><td>6 – Phosphor</td><td>The "radiance-to-collapse" arc: brilliant light followed by exhaustion. Giving, giving, giving… then fading</td></tr>
+        <tr><td>Species</td><td>15 – Phosphorus</td><td>The elemental remedy: glowing brightness, hyperconnectivity, and ultimate depletion</td></tr>
+      </table>
+      <h4>Energetic Signature</h4>
+      <p style="font-style:italic;color:var(--mid);">"I shine brightly — and then I disappear."</p>
+    `
+  },
+  carcinosinum: {
+    eyebrow:'Case 2 · Monera · EA Code 2-7-12',
+    title:'The Mask of Perfection',
+    remedy:'Carcinosinum 200C',
+    body:`
+      <h4>Presenting Concerns</h4>
+      <p>A woman in her early 40s presents with hormonal rosacea worsening after IUD placement, unresponsive to multiple homeopathic remedies and prescription topical creams. During the interview she also brings up:</p>
+      <ul>
+        <li>Marked emotional suppression following hormonal intervention (IUD)</li>
+        <li>History of early emotional trauma, family dysfunction, and chronic lack of validation or support</li>
+        <li>Strong perfectionistic streak, especially in caregiving and self-presentation</li>
+        <li>Deep-seated feelings of guilt, fear of judgment, and a burdened sense of duty</li>
+        <li>Tendency to prioritise others' needs at great cost to herself</li>
+        <li>Expresses herself calmly but holds intense pressure and frustration beneath the surface</li>
+      </ul>
+      <h4>Differential Remedies Considered</h4>
+      <table class="map-table">
+        <tr><th>Remedy</th><th>Reason Considered</th><th>Why Rejected</th></tr>
+        <tr><td>Staphysagria</td><td>Suppressed anger, history of boundary violations, post-IUD aggravation</td><td>Too soft; lacks the chronic perfectionism, control, and responsibility themes</td></tr>
+        <tr><td>Sepia</td><td>Hormonal disturbance, indifference, irritability</td><td>Lacks detachment or escape drive; patient is more engaged, driven by duty</td></tr>
+        <tr><td>Sulphur</td><td>Skin symptoms, heat, burdened by responsibility</td><td>Lacks the messy, expressive ego and philosophical nature of Sulphur</td></tr>
+        <tr><td>Lycopodium</td><td>Digestive issues, control, fear of failure</td><td>Not strongly ego-inflated or hierarchical; she seeks connection and approval, not dominance</td></tr>
+        <tr><td>Calcarea carbonica</td><td>Dutifulness, overwhelm, chronic effort</td><td>Too sluggish and home-oriented; this patient is high-functioning, image-aware, and refined</td></tr>
+        <tr><td><strong>Carcinosinum ✓</strong></td><td>Suppressed emotions, trauma, perfectionism, fear of not being enough</td><td>Selected — matches both physical presentation and emotional blueprint</td></tr>
+      </table>
+      <h4>EA Code Analysis</h4>
+      <table class="map-table">
+        <tr><th>Level</th><th>Code</th><th>Interpretation</th></tr>
+        <tr><td>Kingdom</td><td>2 – Monera</td><td>The sense of over-adaptation, loss of individuality, and need for symbiosis is central. A fragmented self formed in response to chronic emotional stress and environmental pressures</td></tr>
+        <tr><td>Series</td><td>7 – Responsibility</td><td>She carries the burden of moral and emotional responsibility — seeks to do the right thing, often at the cost of self. Her perfectionism is ethical, not egotistical</td></tr>
+        <tr><td>Stage</td><td>12 – Collapse under weight of duty</td><td>Exhausted, burnt out, developing chronic illness due to internalized suppression of needs and emotions. The IUD placement triggered a systemic unraveling — a tipping point in this long arc</td></tr>
+      </table>
+      <h4>Physical Confirmations</h4>
+      <ul>
+        <li>Rosacea, especially hormonally triggered</li>
+        <li>Suppressed emotional states post-IUD</li>
+        <li>History of trauma, perfectionism, and guilt</li>
+        <li>Fatigue, weight gain, sleep disturbances</li>
+        <li>Past remedies (Staph, Sepia, Sulph) did not access the root miasmatic pattern</li>
+      </ul>
+      <h4>Energetic Signature</h4>
+      <p style="font-style:italic;color:var(--mid);">"If I am not perfect, I will be unloved."</p>
+    `
+  },
+  malaria: {
+    eyebrow:'Case 3 · Protista · EA Code 3-…',
+    title:'Trapped in a Loop',
+    remedy:'Malaria officinalis 200C',
+    body:`
+      <h4>Patient Profile</h4>
+      <p>Age 42. Presenting with cyclical migraines with vertigo and nausea (every 3–4 days), fatigue alternating with manic energy bursts, cold sensitivity especially at night, and a history of malaria 10 years ago during travel to Ghana — "never been the same since." Vague dread at dusk; aversion to twilight.</p>
+      <h4>Mental and Emotional Themes (Verbatim)</h4>
+      <ul>
+        <li>"Every time I feel better, I know I'll crash again."</li>
+        <li>"It's like I'm poisoned and relapsing constantly."</li>
+        <li>"I can't make plans — I never know what my body or brain will do."</li>
+        <li>"When I'm up, I overdo everything — then I collapse."</li>
+        <li>"Something in me is stuck. Like a rhythm I can't break."</li>
+      </ul>
+      <h4>Observations</h4>
+      <ul>
+        <li>Shifts rapidly from animated to listless</li>
+        <li>Dark circles under the eyes, pallor, cold hands and feet</li>
+        <li>Mood swings: irritability followed by withdrawal</li>
+        <li>Difficulty describing inner state — often uses metaphors about "cycles," "waves," "traps"</li>
+      </ul>
+      <h4>EA Code Analysis</h4>
+      <table class="map-table">
+        <tr><th>Level</th><th>Interpretation</th></tr>
+        <tr><td>Kingdom — Protista (Sporozoa)</td><td>Parasitic rhythms, loss of inner autonomy</td></tr>
+        <tr><td>Phylum — Apicomplexa</td><td>Intracellular invader; disturbs host from within</td></tr>
+        <tr><td>Class</td><td>Rhythmic alternation → energetic oscillation</td></tr>
+        <tr><td>Order</td><td>Loss of control to an internal cycle (rise and fall of vitality)</td></tr>
+        <tr><td>Family</td><td>Feels poisoned, destabilised, and vulnerable to relapse</td></tr>
+        <tr><td>Genus</td><td>Energetic pattern of malarial miasm — hope followed by helpless collapse</td></tr>
+        <tr><td>Species</td><td>Plasmodium falciparum (Malaria officinalis) — cycles, relapse, inner toxicity</td></tr>
+      </table>
+      <h4>Prescription Rationale</h4>
+      <ul>
+        <li>Symptoms mirror the miasmatic pattern of rise–crash–repeat</li>
+        <li>History of actual malaria infection (though the code would apply even without it)</li>
+        <li>Symptoms appear in cycles, with classic evening aggravation (twilight = classic malaria cue)</li>
+        <li>Remedy matches both physical rhythm and energetic language</li>
+      </ul>
+      <h4>Follow-up (5 weeks)</h4>
+      <ul>
+        <li>The migraine cycle extended from every 3–4 days to every 8–10 days</li>
+        <li>Less anticipatory dread at dusk</li>
+        <li>Reports more emotional steadiness: "I don't drop so hard after a good day"</li>
+        <li>Began writing again, restarted gentle movement practice</li>
+      </ul>
+      <h4>Energetic Signature</h4>
+      <p style="font-style:italic;color:var(--mid);">"Every time I rise, I fall again — I am poisoned by my own cycles."</p>
+    `
+  },
+  arnica: {
+    eyebrow:'Case 4 · Plantae · EA Code 5-7-5-6-4-4-08',
+    title:'A Web of Old Wounds',
+    remedy:'Arnica montana 1M',
+    body:`
+      <h4>Patient Profile</h4>
+      <p>A 68-year-old retired female executive with a long history of episodic joint swellings: sudden onset of stiffness, redness, heat, and throbbing pain in various joints (fingers, wrists, elbows, toes, knees). Swellings were exacerbated by weather changes, stress, and certain foods (wheat, bourbon), and ameliorated by vinegar and pickles.</p>
+      <p>Symptoms began 9 years prior after a <strong>brown recluse spider bite</strong> caused massive swelling in her finger, which eventually led to recurring inflammatory episodes across multiple joints.</p>
+      <h4>Clinical Picture</h4>
+      <ul>
+        <li>Intermittent intense joint inflammation lasting 24–36 hours</li>
+        <li>Throbbing pain described as "womp womp womp," with a sensation of restricted space — "an enlarged heart in too small a container"</li>
+        <li>Systemic sensitivity following insect bite, complicated by lifestyle stress and food sensitivities</li>
+        <li>Patient reluctant to take steroids; seeking natural, holistic relief</li>
+      </ul>
+      <h4>EA Code Analysis</h4>
+      <table class="map-table">
+        <tr><th>Level</th><th>Code</th><th>Interpretation</th></tr>
+        <tr><td>Kingdom</td><td>5 – Plantae</td><td>The patient is having systemic reactions to her environment. Her lens is reactive: me vs. the environment</td></tr>
+        <tr><td>Phylum</td><td>7 – Core Eudicots</td><td>The client has a life task of leadership and creative integration</td></tr>
+        <tr><td>Class</td><td>5 – Asterids</td><td>Performative, expressive, desire to be seen in role</td></tr>
+        <tr><td>Order</td><td>6 – Asterales</td><td>Containment strategy: carries burdens, suppresses</td></tr>
+        <tr><td>Family</td><td>4 – Asteraceae (Compositae)</td><td>Known for capacity to address trauma, inflammation, and reactive immune conditions linked to wounds and toxin effects</td></tr>
+        <tr><td>Genus</td><td>4 – Arnica</td><td>Specific adaptation style: resilience, pushing through, not wanting to be touched</td></tr>
+        <tr><td>Species</td><td>08 – montana</td><td>Stage 8: overextension, high output, beginning to strain</td></tr>
+      </table>
+      <h4>Remarkable Response — Hering's Law in Action</h4>
+      <ul>
+        <li>Sequential reactivation of old injuries occurred, from most severe to least: right ankle and leg, shoulder, left arthritic hand, spider-bitten finger, and recent left knee injury</li>
+        <li>Each injury swelled for approximately 24 hours in reverse order of severity</li>
+        <li>Following this process, joint swellings ceased entirely — no new episodes since prescription date</li>
+        <li>A period of detoxification followed with a bout of diarrhea and two styes</li>
+        <li>Significant weight loss of 28 lbs., likely reflecting systemic reduction in inflammation</li>
+      </ul>
+      <h4>Discussion</h4>
+      <p>This case exemplifies healing following Hering's Law — progressing from the deepest and oldest pathology to more recent conditions and ultimately resolution. The sequential symptom return validates deep energetic regulation, not merely symptomatic suppression. The detox events (diarrhea, styes) and weight loss further underscore systemic homeostasis restoration.</p>
+      <h4>Energetic Signature</h4>
+      <p style="font-style:italic;color:var(--mid);">"I carry the wounds of the past in my body — and my body is ready to release them."</p>
+    `
+  },
+  lac: {
+    eyebrow:'Case 5 · Animalia · EA Code 6-773.26.12',
+    title:'Starved for Love',
+    remedy:'Lac caninum 1M',
+    body:`
+      <h4>Patient Profile</h4>
+      <p>The client presents with a lifelong struggle to maintain a healthy weight and reports compulsive emotional eating. Despite consistent efforts, her weight continues to increase. She links weight gain to breakups, abandonment, and feelings of betrayal — particularly in early life and recent marital circumstances.</p>
+      <p>The client describes herself as abandoned by her parents, emotionally betrayed by her mother (who revealed a rape-related secret leading to her eviction from the home at 18), and emotionally unsupported in her current sexless marriage. She consciously maintains excess weight as a "protective" mechanism to avoid acting on sexual desires. Food — especially sweets and carbs — substitutes for love and affection.</p>
+      <h4>Core Themes</h4>
+      <ul>
+        <li>Betrayal and abandonment by both parents</li>
+        <li>Suppression of sexual desire due to sexless marriage</li>
+        <li>Emotional eating as a replacement for love and intimacy</li>
+        <li>Guilt and shame over her body, desires, and past actions</li>
+        <li>Impotence and hopelessness in face of unchangeable emotional dynamics</li>
+        <li>Dreams of past lovers and forgiveness</li>
+        <li>Failed IVF and unconsummated marriage</li>
+        <li>Food = Love: cravings for sugar, chocolate, cake, bread</li>
+      </ul>
+      <h4>EA Code Analysis</h4>
+      <table class="map-table">
+        <tr><th>Level</th><th>Code</th><th>Interpretation</th></tr>
+        <tr><td>Kingdom</td><td>6 – Animalia</td><td>Me vs. others; survival through relationship. Primary issue is self-actualisation — trust, betrayal, and group loyalty</td></tr>
+        <tr><td>Phylum</td><td>7 – Chordata</td><td>Looking for spiritual transcendence; energy healer, practices akashic record reading and daily meditation</td></tr>
+        <tr><td>Class</td><td>7 – Mammalia</td><td>Maternal care, nourishment, abandonment, and sexual intimacy confirmed at this level</td></tr>
+        <tr><td>Order</td><td>3 – Laurasiatherian</td><td>Affiliation — the key conflict: inner tension between dominance and submission, guilt about instincts, pack belonging vs. independence</td></tr>
+        <tr><td>Family</td><td>2 – Ferae</td><td>"The Dependent" — shame, loyalty, betrayal, protection, alternating dominance and submission; years of codependence</td></tr>
+        <tr><td>Genus</td><td>6 – Felines/Canines</td><td>Outsider by choice; feels overburdened; opportunistic behavior</td></tr>
+        <tr><td>Species</td><td>12 – Lac caninum</td><td>Shame, worthlessness, betrayal by mother, duality of self, alternating mental/emotional states</td></tr>
+      </table>
+      <h4>Why Not Crocuta crocuta (Hyena)?</h4>
+      <p>The theoretical code pointed initially toward Hyena — which would suit a more dominant, aggressive, matriarchal picture. However, this remedy does not yet exist in practice. The comparison reveals the diagnostic depth of the EA system:</p>
+      <table class="map-table">
+        <tr><th>Theme</th><th>Hyena</th><th>Lac caninum</th></tr>
+        <tr><td>Dominance</td><td>Dominant, strategic, loud</td><td>Submissive, unsure, deferential</td></tr>
+        <tr><td>Shame</td><td>Externalised through mocking</td><td>Internalised self-hating, humiliation</td></tr>
+        <tr><td>Voice</td><td>Loud, laughter-like under stress</td><td>Quiet or passive, fear of speaking up</td></tr>
+        <tr><td>Sexuality</td><td>Primal, aggressive, tied to rank</td><td>Shame-ridden, often linked with abuse</td></tr>
+        <tr><td>Dreams</td><td>Packs, dominance, blood</td><td>Dogs, snakes, degradation, abandonment</td></tr>
+      </table>
+      <p>Lac caninum repertorised very well and is a close match to the core state: betrayal by the mother, abandonment, deep fragmentation of self-worth, conflict between desire and guilt, sexual suppression, and compensatory behavior (eating instead of relating).</p>
+      <h4>Prescription</h4>
+      <p>Lac caninum 1M, single dose. Follow-up planned at 4 weeks. Patient advised to journal dreams, emotional shifts, and changes in food cravings or libido.</p>
+      <h4>Energetic Signature</h4>
+      <p style="font-style:italic;color:var(--mid);">"I am starved for love — and I feed myself with food instead."</p>
+    `
+  }
+};
+
+function openCasePanel(key) {
+  const d = casePanels[key];
+  const html = `
+    <div class="panel-eyebrow">${d.eyebrow}</div>
+    <h2 class="panel-title">${d.title}</h2>
+    <p class="panel-subtitle">Remedy: <strong>${d.remedy}</strong></p>
+    <div class="panel-divider"></div>
+    <div class="panel-body">${d.body}</div>
+  `;
+  openOverlay(html);
+}
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const t = document.querySelector(a.getAttribute('href'));
+    if(t) t.scrollIntoView({ behavior:'smooth' });
+  });
+});
+</script>
+
+
+
+
+
+
+</body></html>
